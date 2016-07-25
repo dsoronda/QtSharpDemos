@@ -7,32 +7,38 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
+    /// <summary>
+    /// Create simple Qt widget control.
+    /// </summary>
     class QtWidgetDemo1 : QtWidgets.QWidget
     {
-        const int WIDTH = 250;
-        const int HEIGHT = 150;
+        const int WIDTH = 300;
+        const int HEIGHT = 200;
 
         public QtWidgetDemo1()
         {
-            WindowTitle = "TEST";
+            WindowTitle = "QtWidget Demo";
             ToolTip = "This is QT Qwidget";
-            Resize(250, 150);
+            Resize(WIDTH, HEIGHT);
             Center();
             Show();
         }
 
+        /// <summary>
+        /// Center control on screen
+        /// </summary>
         private void Center()
         {
-            var qdw = new QDesktopWidget();
+            var desktopWidget = new QDesktopWidget();
 
-            int screenWidth = qdw.Width;
-            int screenHeight = qdw.Height;
+            int screenWidth = desktopWidget.Width;
+            int screenHeight = desktopWidget.Height;
 
-            int cx = (screenWidth - WIDTH) / 2;
-            int cy = (screenHeight - HEIGHT) / 2;
+            int centerX = (screenWidth - WIDTH) / 2;
+            int centerY = (screenHeight - HEIGHT) / 2;
 
-            Move(cx, cy);
+            Move(centerX, centerY);
         }
-    }
 
+    }
 }

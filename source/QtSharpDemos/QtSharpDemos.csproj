@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GuiExample\QtWidgetDemo1.cs" />
+    <Compile Include="GuiExample\QtQuitButtonDemo1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
