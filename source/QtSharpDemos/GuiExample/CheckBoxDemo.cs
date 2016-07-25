@@ -1,0 +1,48 @@
+﻿using QtCore.Qt;
+using QtWidgets;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QtSharpDemos.GuiExample
+{
+    /// <summary>
+    /// Display QCheckBox  widget to show/hide the title of the window
+    /// </summary>
+    public class CheckBoxDemo : QtWidgets.QWidget
+    {
+        public CheckBoxDemo()
+        {
+            WindowTitle = "QCheckBox";
+
+            SetupUI();
+
+            Resize(250, 150);
+            Move(300, 300);
+            Show();
+        }
+
+        public void SetupUI()
+        {
+            var cb = new QCheckBox("Show Title", this);
+            cb.Checked = true;
+            cb.Move(50, 50);
+
+            cb.StateChanged += ShowTitle;
+        }
+
+        public void ShowTitle(int state)
+        {
+            if (state == (int)CheckState.Checked)
+            {
+                WindowTitle = "checked";
+            }
+            else
+            {
+                WindowTitle = "unchecked";
+            }
+        }
+    }
+}
