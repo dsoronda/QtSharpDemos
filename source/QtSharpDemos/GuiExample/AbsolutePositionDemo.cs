@@ -16,31 +16,34 @@ namespace QtSharpDemos.GuiExample
             WindowTitle = "Absolute position demo";
 
             InitUI();
-
-            Resize(300, 280);
-            Move(300, 300);
+            Resize(800, 600);
             Show();
         }
 
         void InitUI()
         {
-            StyleSheet = "QWidget { background-color: #414141 }";
+            StyleSheet = "QWidget { background-color: #7e7e7e }";
 
-            var qt_icon = new QPixmap(@"media\gfx\Apps-Qt-icon.png");
-            //var rotunda = new QPixmap("rotunda.jpg");
-            //var mincol = new QPixmap("mincol.jpg");
+            var sky1_icon = new QPixmap(@"media\gfx\sky1.jpg");
+            var sky2_icon = new QPixmap(@"media\gfx\sky2.jpg");
+            var pancake_icon = new QPixmap(@"media\gfx\pancake.jpg");
 
-            var barLabel = new QLabel(this);
-            barLabel.Pixmap = qt_icon;
-            barLabel.Move(20, 20);
+            var pancakeLabel = new QLabel(this);
+            pancakeLabel.Pixmap = pancake_icon.ScaledToHeight(320);
+            pancakeLabel.Resize(pancakeLabel.Pixmap.Size);
+            pancakeLabel.Move(170, 50);
 
-            var rotLabel = new QLabel(this);
-            rotLabel.Pixmap = qt_icon;
-            rotLabel.Move(40, 160);
+            var skyLabel = new QLabel(this);
+            skyLabel.Pixmap = sky1_icon.ScaledToHeight(160);
+            skyLabel.Resize(skyLabel.Pixmap.Size);
+            skyLabel.Move(20, 20);
 
-            var minLabel = new QLabel(this);
-            minLabel.Pixmap = qt_icon;
-            minLabel.Move(170, 50);
+            var sky2Label = new QLabel(this);
+            sky2Label.Pixmap = sky2_icon.ScaledToHeight(120); ;
+            sky2Label.Resize(sky2Label.Pixmap.Size);
+            sky2Label.Move(40, 180);
+
+ 
         }
 
     }
