@@ -28,7 +28,8 @@ namespace QtSharpDemos
                 //var buttonsDemo = new ButtonsDemo();
                 //var windowsDemo = new WindowsDemo();
                 //var checkBoxDemo = new CheckBoxDemo();
-                var labelDemo = new LabelDemo();
+                //var labelDemo = new LabelDemo();
+                var lineEditDemo = new LineEditDemo();
 
                 QApplication.Exec();
             }
