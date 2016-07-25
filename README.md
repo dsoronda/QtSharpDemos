@@ -27,6 +27,8 @@ This is required so that Visual studio can see Qt libraries on project run.
 
 ## Media
 
+Note : Media files are NOT covered by Apache License !!!
+
 ### Graphic
 
 [Apps-Qt-icon.png] (http://www.iconarchive.com/show/flatwoken-icons-by-alecive/Apps-Qt-icon.html) under License: CC Attribution-Share Alike 4.0
