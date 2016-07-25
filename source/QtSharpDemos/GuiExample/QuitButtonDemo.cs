@@ -7,9 +7,9 @@ using QtCore;
 
 namespace QtSharpDemos.GuiExample
 {
-    class QtQuitButtonDemo1 : QtWidgets.QWidget
+    class QuitButtonDemo : QtWidgets.QWidget
     {
-        public QtQuitButtonDemo1()
+        public QuitButtonDemo()
         {
             WindowTitle = "Quit button";
 
@@ -25,14 +25,13 @@ namespace QtSharpDemos.GuiExample
             var quitButton = new QtWidgets.QPushButton("Quit", this);
 
             var method = new QtCore.QMetaMethod();
-
-            // Connect button signal to appropriate slot
-            // This is from : [Qt documentation] (https://wiki.qt.io/How_to_Use_QPushButton)
-            //connect(m_button, SIGNAL(released()), this, SLOT(handleButton()));
-           // Connect(quitButton, SIGNAL(clicked()), this, SLOT(quit()));
-            Connect(quitButton, "clicked()", this.ParentWidget,  "quit()");
-            // resize button
+            quitButton.Clicked += QuitButton_Clicked;
             quitButton.SetGeometry(50, 50, 80, 30);
+        }
+
+        private void QuitButton_Clicked(bool obj)
+        {
+            this.Close();
         }
     }
 }

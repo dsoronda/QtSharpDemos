@@ -56,15 +56,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GuiExample\QtWidgetDemo1.cs" />
-    <Compile Include="GuiExample\QtQuitButtonDemo1.cs" />
+    <Compile Include="GuiExample\AbsolutePositionDemo.cs" />
+    <Compile Include="GuiExample\WidgetDemo.cs" />
+    <Compile Include="GuiExample\QuitButtonDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="media\gfx\Apps-Qt-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

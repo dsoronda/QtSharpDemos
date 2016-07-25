@@ -10,12 +10,12 @@ namespace QtSharpDemos.GuiExample
     /// <summary>
     /// Create simple Qt widget control.
     /// </summary>
-    class QtWidgetDemo1 : QtWidgets.QWidget
+    class WidgetDemo : QtWidgets.QWidget
     {
         const int WIDTH = 300;
         const int HEIGHT = 200;
 
-        public QtWidgetDemo1()
+        public WidgetDemo()
         {
             WindowTitle = "QtWidget Demo";
             ToolTip = "This is QT Qwidget";
