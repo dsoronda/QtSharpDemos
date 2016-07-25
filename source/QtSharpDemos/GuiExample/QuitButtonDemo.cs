@@ -23,8 +23,6 @@ namespace QtSharpDemos.GuiExample
         public void InitUI()
         {
             var quitButton = new QtWidgets.QPushButton("Quit", this);
-
-            var method = new QtCore.QMetaMethod();
             quitButton.Clicked += QuitButton_Clicked;
             quitButton.SetGeometry(50, 50, 80, 30);
         }
