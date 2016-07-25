@@ -24,3 +24,10 @@ This is required so that Visual studio can see Qt libraries on project run.
 * QtCore-inlines.dll
 
 [More to come]
+
+## Media
+
+### Graphic
+
+[Apps-Qt-icon.png] (http://www.iconarchive.com/show/flatwoken-icons-by-alecive/Apps-Qt-icon.html) under License: CC Attribution-Share Alike 4.0
+
