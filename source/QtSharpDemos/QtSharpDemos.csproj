@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GuiExample\AbsolutePositionDemo.cs" />
+    <Compile Include="GuiExample\ButtonsDemo.cs" />
     <Compile Include="GuiExample\WidgetDemo.cs" />
     <Compile Include="GuiExample\QuitButtonDemo.cs" />
     <Compile Include="Program.cs" />

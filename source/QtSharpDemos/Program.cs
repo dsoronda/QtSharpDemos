@@ -22,9 +22,10 @@ namespace QtSharpDemos
                 {
                     var qtApp = new QApplication(ref count, null);
                 }
-                //var w = new WidgetDemo();
+                //var widgetDemo = new WidgetDemo();
                 //var quitButtonDemo = new QuitButtonDemo();
-                var x = new AbsolutePositionDemo();
+                //var absolutePositionDemo = new AbsolutePositionDemo();
+                var buttonsDemo = new ButtonsDemo();
                 QApplication.Exec();
             }
             catch (Exception)
