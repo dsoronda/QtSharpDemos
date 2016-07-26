@@ -20,6 +20,7 @@ namespace QtSharpDemos.GuiExample
             Move(300, 300);
             Show();
         }
+
         public void InitUI()
         {
             string text = @"To be or not to be,

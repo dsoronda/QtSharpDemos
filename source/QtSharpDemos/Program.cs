@@ -33,8 +33,8 @@ namespace QtSharpDemos
                 //var togleButtonsDemo = new TogleButtonsDemo();
                 //var comboBoxDemo = new ComboBoxDemo();
                 //var menuBar = new MenuBarDemo();
-                var menuToolbarDemo = new ToolbarDemo();
-
+                //var menuToolbarDemo = new ToolbarDemo();
+                var messageBoxDemo = new MessageBoxDemo();
 
                 QApplication.Exec();
             }

@@ -24,6 +24,7 @@ namespace QtSharpDemos.GuiExample
             Move(300, 300);
             Show();
         }
+
         public void InitUI()
         {
             label = new QLabel(this);
