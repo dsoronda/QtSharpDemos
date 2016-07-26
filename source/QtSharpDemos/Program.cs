@@ -30,8 +30,8 @@ namespace QtSharpDemos
                 //var checkBoxDemo = new CheckBoxDemo();
                 //var labelDemo = new LabelDemo();
                 //var lineEditDemo = new LineEditDemo();
-                var togleButtonsDemo = new TogleButtonsDemo();
-
+                //var togleButtonsDemo = new TogleButtonsDemo();
+                var comboBoxDemo = new ComboBoxDemo();
 
 
                 QApplication.Exec();
