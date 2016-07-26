@@ -29,7 +29,9 @@ namespace QtSharpDemos.GuiExample
         {
             base.OnPaintEvent(e);
 
-            var painter = new QPainter(this);
+            var painter = new QPainter();
+            //this.InitPainter(painter);    // throws exception
+             
             DrawPatterns(painter);
 
             painter.End();
