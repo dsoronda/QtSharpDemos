@@ -17,12 +17,23 @@ namespace QtSharpDemos.GuiExample
         {
             WindowTitle = "Paint Demo";
 
-            //var paintEvent = new QPaintEvent(this.Rect);
-            //this.OnPaintEvent(paintEvent);
+            var paintEvent = new QPaintEvent(this.Rect);
+            // HOW TO ADD ACTION TO PAINT EVENT ????
+            this.OnPaintEvent(paintEvent);
+            //this.OnPaintEvent += MyPaintEvent; // we need something like this ?
 
             Resize(250, 150);
             Move(300, 300);
             Show();
+        }
+
+        protected void MyPaintEvent(QPaintEvent e)
+        {
+            base.OnPaintEvent(e);
+            var painter = new QPainter();
+
+            DrawPatterns(painter);
+            painter.End();
         }
 
         protected override void OnPaintEvent(QPaintEvent e)
@@ -30,8 +41,13 @@ namespace QtSharpDemos.GuiExample
             base.OnPaintEvent(e);
 
             var painter = new QPainter();
-            //this.InitPainter(painter);    // throws exception
-             
+
+            // this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
+            // throws Access Violation exception, "Attempted to read or write protected memory. This is often an indication that other memory is corrupt."}
+            //var painter2 = new QPainter(this);// throws Access Violation exception
+
+            // this.InitPainter(painter);    // throws Access Violation exception , same as abowe, if commented nothing is drawn on widget
+
             DrawPatterns(painter);
 
             painter.End();
