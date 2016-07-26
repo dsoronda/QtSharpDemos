@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class MenuToolbarDemo : QtWidgets.QWidget
+    public class MenuBarDemo : QtWidgets.QWidget
     {
-        public MenuToolbarDemo()
+        public MenuBarDemo()
         {
-            WindowTitle = "Simple menu demo";
+            WindowTitle = "Simple Toolbar Demo";
 
             InitUI();
 
