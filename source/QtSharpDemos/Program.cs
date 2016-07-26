@@ -24,12 +24,15 @@ namespace QtSharpDemos
                 }
                 //var widgetDemo = new WidgetDemo();
                 //var quitButtonDemo = new QuitButtonDemo();
-                //var absolutePositionDemo = new AbsolutePositionDemo();
+                //var absolutePositionDemo = new ImagesWithAbsolutePositionDemo();
                 //var buttonsDemo = new ButtonsDemo();
                 //var windowsDemo = new WindowsDemo();
                 //var checkBoxDemo = new CheckBoxDemo();
                 //var labelDemo = new LabelDemo();
-                var lineEditDemo = new LineEditDemo();
+                //var lineEditDemo = new LineEditDemo();
+                var togleButtonsDemo = new TogleButtonsDemo();
+
+
 
                 QApplication.Exec();
             }

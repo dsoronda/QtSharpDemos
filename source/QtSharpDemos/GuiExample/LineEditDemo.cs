@@ -30,6 +30,7 @@ namespace QtSharpDemos.GuiExample
 
             QLineEdit edit = new QLineEdit(this);
             edit.TextChanged += OnChanged;
+            edit.Text = "LineEdit demo";
 
             edit.Move(60, 100);
             label.Move(60, 40);

@@ -9,9 +9,9 @@ using QtWidgets;
 
 namespace QtSharpDemos.GuiExample
 {
-    class AbsolutePositionDemo : QtWidgets.QWidget
+    class ImagesWithAbsolutePositionDemo : QtWidgets.QWidget
     {
-        public AbsolutePositionDemo()
+        public ImagesWithAbsolutePositionDemo()
         {
             WindowTitle = "Absolute position demo";
 
