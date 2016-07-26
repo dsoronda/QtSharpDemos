@@ -37,7 +37,6 @@ namespace QtSharpDemos.GuiExample
             label.Move(60, 40);
         }
 
-        //[Q_SLOT]
         public void OnChanged(string text)
         {
             label.Text = text;

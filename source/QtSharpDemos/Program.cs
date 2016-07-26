@@ -34,7 +34,9 @@ namespace QtSharpDemos
                 //var comboBoxDemo = new ComboBoxDemo();
                 //var menuBar = new MenuBarDemo();
                 //var menuToolbarDemo = new ToolbarDemo();
-                var messageBoxDemo = new MessageBoxDemo();
+                //var messageBoxDemo = new MessageBoxDemo();
+                var inputDialogDemo = new InputDialogDemo();
+
 
                 QApplication.Exec();
             }

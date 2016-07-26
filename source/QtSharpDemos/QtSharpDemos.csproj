@@ -60,6 +60,7 @@
     <Compile Include="GuiExample\ButtonsDemo.cs" />
     <Compile Include="GuiExample\CheckBoxDemo.cs" />
     <Compile Include="GuiExample\ComboBoxDemo.cs" />
+    <Compile Include="GuiExample\InputDialogDemo.cs" />
     <Compile Include="GuiExample\MessageBoxDemo.cs" />
     <Compile Include="GuiExample\MenuBarDemo.cs" />
     <Compile Include="GuiExample\ToolbarDemo.cs" />
