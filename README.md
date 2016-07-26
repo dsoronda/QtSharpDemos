@@ -32,4 +32,5 @@ This is required so that Visual studio can see Qt libraries on project run.
 
 Note : Media files are my personal files under [Attribution-ShareAlike 4.0 International] (https://creativecommons.org/licenses/by-sa/4.0/)
 
-
+### Icons
+Demos uses [Tango Icon set](https://en.wikipedia.org/wiki/Tango_Desktop_Project), check link for license info.
