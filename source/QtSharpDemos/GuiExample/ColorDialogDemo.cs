@@ -25,7 +25,7 @@ namespace QtSharpDemos.GuiExample
 
         public void InitUI()
         {
-            label = new QLabel"ColorDialog Demo", this);
+            label = new QLabel("ColorDialog Demo", this);
 
             var vbox = new QVBoxLayout(this);
             label.Alignment = QtCore.Qt.AlignmentFlag.AlignCenter;
