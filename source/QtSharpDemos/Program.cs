@@ -36,7 +36,8 @@ namespace QtSharpDemos
                 //var menuToolbarDemo = new ToolbarDemo();
                 //var messageBoxDemo = new MessageBoxDemo();
                 //var inputDialogDemo = new InputDialogDemo();
-                var colorDialogDemo = new ColorDialogDemo();
+                //var colorDialogDemo = new ColorDialogDemo();
+                var fontDialogDemo = new FontDialogDemo();
 
                 QApplication.Exec();
             }
