@@ -1,5 +1,5 @@
 # QtSharpDemos
-Code examples for QtSharp
+Code examples for [QtSharp](https://github.com/ddobrev/QtSharp)
 
 ## Project setup
 
