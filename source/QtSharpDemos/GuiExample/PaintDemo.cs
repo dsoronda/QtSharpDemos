@@ -17,8 +17,8 @@ namespace QtSharpDemos.GuiExample
         {
             WindowTitle = "Paint Demo";
 
-            //this.OnPaintEvent(paintEvent); // ??
-            //this.OnPaintEvent += MyPaintEvent; // we need something like this ?
+            //this.OnPaintEvent(paintEvent); // this is how method looks now 
+            //this.OnPaintEvent += MyPaintEvent; //  Compiler  error : Cannot assign to 'OnPaintEvent' because it is a 'method group'
 
             Resize(250, 150);
             Move(300, 300);
