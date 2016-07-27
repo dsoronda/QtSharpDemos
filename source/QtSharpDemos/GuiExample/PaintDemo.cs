@@ -17,12 +17,32 @@ namespace QtSharpDemos.GuiExample
         {
             WindowTitle = "Paint Demo";
 
-            //this.OnPaintEvent(paintEvent); // this is how method looks now 
             //this.OnPaintEvent += MyPaintEvent; //  Compiler  error : Cannot assign to 'OnPaintEvent' because it is a 'method group'
+
+            // used this from http://zetcode.com/gui/csharpqyoto/painting/
+            this.PaintEvent += MyPaintEvent;
+
 
             Resize(250, 150);
             Move(300, 300);
             Show();
+        }
+
+        /// <summary>
+        /// this should have sig:
+        /// private void MyPaintEvent(object sender, QPaintEvent e) instead arg1/arg2
+        /// </summary>
+        /// <param name="arg1">is of type PaintDemo : QWidget :  IQPaintDevice</param>
+        /// <param name="arg2"></param>
+        private void MyPaintEvent(object arg1, QPaintEvent arg2)
+        {
+            // cast from PaintDemo to IQPaintDevice
+            // throws Access Violation exception, "Attempted to read or write protected memory. This is often an indication that other memory is corrupt."}
+
+            var painter = new QPainter((IQPaintDevice)arg1); 
+            DrawPatterns(painter);
+
+            painter.End();
         }
 
         protected override void OnPaintEvent(QPaintEvent e)
