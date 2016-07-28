@@ -15,7 +15,7 @@ namespace QtSharpDemos.GuiExample
     {
         public CheckBoxDemo()
         {
-            WindowTitle = "QCheckBox";
+            WindowTitle = "CheckBox Demo";
 
             SetupUI();
 
@@ -26,11 +26,11 @@ namespace QtSharpDemos.GuiExample
 
         public void SetupUI()
         {
-            var cb = new QCheckBox("Show Title", this);
-            cb.Checked = true;
-            cb.Move(50, 50);
+            var checkBox = new QCheckBox("Show title", this);
+            checkBox.Checked = true;
+            checkBox.Move(50, 50);
 
-            cb.StateChanged += ShowTitle;
+            checkBox.StateChanged += ShowTitle;
         }
 
         public void ShowTitle(int state)

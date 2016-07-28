@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QtCore.Qt;
 
 namespace QtSharpDemos.GuiExample
 {
-    using QtCore.Qt;
-
     public class PaintDemo : QtWidgets.QWidget
     {
 
@@ -21,7 +20,6 @@ namespace QtSharpDemos.GuiExample
 
             // used this from http://zetcode.com/gui/csharpqyoto/painting/
             this.PaintEvent += MyPaintEvent;
-
 
             Resize(250, 150);
             Move(300, 300);
@@ -39,7 +37,7 @@ namespace QtSharpDemos.GuiExample
             // cast from PaintDemo to IQPaintDevice
             // throws Access Violation exception, "Attempted to read or write protected memory. This is often an indication that other memory is corrupt."}
 
-            var painter = new QPainter((IQPaintDevice)arg1); 
+            var painter = new QPainter((IQPaintDevice)arg1);
             DrawPatterns(painter);
 
             painter.End();

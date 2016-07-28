@@ -18,6 +18,7 @@ namespace QtSharpDemos.GuiExample
             WindowTitle = "Window demo";
 
             InitUI();
+            this.Layout = GenerateLayout();
 
             Resize(350, 300);
             Move(300, 300);
@@ -25,37 +26,39 @@ namespace QtSharpDemos.GuiExample
         }
         void InitUI()
         {
-            var vbox = new QVBoxLayout(this);
+
+        }
+
+        /// <summary>
+        /// Generate 
+        /// </summary>
+        /// <returns></returns>
+        public static QLayout GenerateLayout()
+        {
+            //var vbox = new QVBoxLayout(parentWidget);
+            var vbox = new QVBoxLayout();
+
+            vbox.AddWidget(new QLabel("Windows"));
 
             var vbox1 = new QVBoxLayout();
+            vbox1.AddWidget(new QPushButton("Activate"));
+            vbox1.AddWidget(new QPushButton("Close"), 0, AlignmentFlag.AlignTop);
+
             var hbox1 = new QHBoxLayout();
-            var hbox2 = new QHBoxLayout();
-
-            var windLabel = new QLabel("Windows", this);
-            var edit = new QTextEdit(this);
-            edit.Enabled = false;
-
-            var activate = new QPushButton("Activate", this);
-            var close = new QPushButton("Close", this);
-            var help = new QPushButton("Help", this);
-            var ok = new QPushButton("OK", this);
-
-            vbox.AddWidget(windLabel);
-
-            vbox1.AddWidget(activate);
-            vbox1.AddWidget(close, 0, AlignmentFlag.AlignTop);
-            hbox1.AddWidget(edit);
+            hbox1.AddWidget(new QTextEdit() { Enabled = false });
             hbox1.AddLayout(vbox1);
 
             vbox.AddLayout(hbox1);
 
-            hbox2.AddWidget(help);
+            var hbox2 = new QHBoxLayout();
+            hbox2.AddWidget(new QPushButton("Help"));
             hbox2.AddStretch(1);
-            hbox2.AddWidget(ok);
+            hbox2.AddWidget(new QPushButton("OK"));
 
             vbox.AddLayout(hbox2, 1);
 
-            Layout = vbox;
+            return vbox;
+            //parentWidget.Layout = vbox;
         }
     }
 }
