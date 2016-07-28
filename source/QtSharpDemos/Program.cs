@@ -22,13 +22,15 @@ namespace QtSharpDemos
                 {
                     var qtApp = new QApplication(ref count, null);
                 }
+
+                var labelDemo = new LabelDemo();
+
+                //var windowsDemo = new WindowsDemo();
                 //var widgetDemo = new WidgetDemo();
                 //var quitButtonDemo = new QuitButtonDemo();
                 //var absolutePositionDemo = new ImagesWithAbsolutePositionDemo();
                 //var buttonsDemo = new ButtonsDemo();
-                //var windowsDemo = new WindowsDemo();
                 //var checkBoxDemo = new CheckBoxDemo();
-                //var labelDemo = new LabelDemo();
                 //var lineEditDemo = new LineEditDemo();
                 //var togleButtonsDemo = new TogleButtonsDemo();
                 //var comboBoxDemo = new ComboBoxDemo();
@@ -42,7 +44,7 @@ namespace QtSharpDemos
 
                 //var paintDemo = new PaintDemo(); // not working properly, waiting for fix!
 
-                var panelDemo = new PanelsDemo();
+                //var panelDemo = new PanelsDemo();
 
                 QApplication.Exec();
             }

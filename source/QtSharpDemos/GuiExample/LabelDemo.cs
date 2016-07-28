@@ -8,30 +8,42 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class LabelDemo : QtWidgets.QWidget
-    {
-        public LabelDemo()
-        {
-            WindowTitle = "Label demo";
+	public class LabelDemo : QtWidgets.QWidget
+	{
+		public LabelDemo()
+		{
+			WindowTitle = "Label demo";
 
-            InitUI();
+			var vboxLayout = GetLayout();
+			this.Layout = vboxLayout;
 
-            Resize(250, 150);
-            Move(300, 300);
-            Show();
-        }
+			Resize(250, 150);
+			Show();
+		}
 
-        public void InitUI()
-        {
-            string text = @"To be or not to be,
-is that a question ?";
+		/// <summary>
+		/// Gets VBoxLayout with label
+		/// </summary>
+		/// <returns>The layout.</returns>
+		QLayout GetLayout()
+		{
+			var vbox = new QVBoxLayout();
+			vbox.AddWidget(InitLabel("Hello world"));
+			return vbox;
+		}
 
-            var label = new QLabel(text, this);
-            label.Font = new QFont("Purisa", 9);
-
-            var vbox = new QVBoxLayout();
-            vbox.AddWidget(label);
-            Layout = vbox;
-        }
-    }
+		/// <summary>
+		/// Inits the label.
+		/// </summary>
+		/// <returns>The label.</returns>
+		/// <param name="text">Label text</param>
+		/// <param name="font">Font for text (default is Arial 12)</param>
+		public static QLabel InitLabel(string text = "Hi", QFont font = null)
+		{
+			return new QLabel(text)
+			{
+				Font = font ?? new QFont("Arial", 12)
+			}
+		}
+	}
 }
