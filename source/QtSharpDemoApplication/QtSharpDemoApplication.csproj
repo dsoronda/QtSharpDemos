@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E07FD9A-4282-4D26-8544-83014588AAE2}</ProjectGuid>
+    <ProjectGuid>{ADC1E1C4-91A1-4B5B-B57F-B1704ABA6758}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QtSharpDemos</RootNamespace>
-    <AssemblyName>QtSharpDemos</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>QtSharpDemoApplication</RootNamespace>
+    <AssemblyName>QtSharpDemoApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,26 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="QtCoreSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtCoreSharp.dll</HintPath>
+    <Reference Include="QtCoreSharp">
+      <HintPath>..\..\..\..\qtsharp\QtCoreSharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtGuiSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtGuiSharp.dll</HintPath>
+    <Reference Include="QtGuiSharp">
+      <HintPath>..\..\..\..\qtsharp\QtGuiSharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtQmlSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQmlSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="QtQuickSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQuickSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="QtQuickWidgetsSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQuickWidgetsSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="QtWidgetsSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtWidgetsSharp.dll</HintPath>
+    <Reference Include="QtWidgetsSharp">
+      <HintPath>..\..\..\..\qtsharp\QtWidgetsSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,43 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GuiExample\AbsolutePositionDemo.cs" />
-    <Compile Include="GuiExample\ButtonsDemo.cs" />
-    <Compile Include="GuiExample\CheckBoxDemo.cs" />
-    <Compile Include="GuiExample\FontDialogDemo.cs" />
-    <Compile Include="GuiExample\ColorDialogDemo.cs" />
-    <Compile Include="GuiExample\ComboBoxDemo.cs" />
-    <Compile Include="GuiExample\InputDialogDemo.cs" />
-    <Compile Include="GuiExample\QQmlApplicationEngineDemo.cs" />
-    <Compile Include="GuiExample\SpliterWithPanelsDemo.cs" />
-    <Compile Include="GuiExample\PaintDemo.cs" />
-    <Compile Include="GuiExample\MessageBoxDemo.cs" />
-    <Compile Include="GuiExample\MenuBarDemo.cs" />
-    <Compile Include="GuiExample\QuickViewDemo.cs" />
-    <Compile Include="GuiExample\ToolbarDemo.cs" />
-    <Compile Include="GuiExample\LabelDemo.cs" />
-    <Compile Include="GuiExample\LineEditDemo.cs" />
-    <Compile Include="GuiExample\TogleButtonsDemo.cs" />
-    <Compile Include="GuiExample\WidgetDemo.cs" />
-    <Compile Include="GuiExample\QuitButtonDemo.cs" />
-    <Compile Include="GuiExample\WindowsDemo.cs" />
     <Compile Include="media\MediaIconHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widgets\MyMenuBar.cs" />
+    <Compile Include="Widgets\TestApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="media\gfx\pancake.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="media\gfx\sky1.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="media\gfx\sky2.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="media\icons\document-new.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -118,15 +78,9 @@
     <Content Include="media\icons\system-log-out.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="media\QML\main.qml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="media\QML\App.qml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="media\QML\Rectangle.qml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="media\gfx\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

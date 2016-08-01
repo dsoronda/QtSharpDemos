@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QtSharpDemos.GuiExample;
+using QtGui;
 
 namespace QtSharpDemos
 {
@@ -21,6 +22,7 @@ namespace QtSharpDemos
                 unsafe
                 {
                     var qtApp = new QApplication(ref count, null);
+                    //var qtApp = new QGuiApplication(ref count, null);
                 }
 
                 // var labelDemo = new LabelDemo();
@@ -41,7 +43,7 @@ namespace QtSharpDemos
                 //var colorDialogDemo = new ColorDialogDemo();
                 //var fontDialogDemo = new FontDialogDemo();
 
-                var panelDemo = new SpliterWithPanelsDemo();
+                 var panelDemo = new SpliterWithPanelsDemo();
 
 
                 // NOT WORKING : Paint need fix in QtSharp
@@ -49,9 +51,14 @@ namespace QtSharpDemos
 
                 // QML Demos with blank window :(
                 //var qmlDemo = new QmlDemo();
+                var qQmlApplicationEngineDemo = new QQmlApplicationEngineDemo();
                 //var quickViewDemo = new QuickViewDemo();
 
-                QApplication.Exec();
+                // This works
+                // QApplication.Exec();
+
+                // Run the QApplication Process ( this also works)
+                QGuiApplication.Exec();
             }
             catch (Exception)
             {

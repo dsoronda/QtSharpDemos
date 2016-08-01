@@ -27,6 +27,9 @@ This is required so that Visual studio can see Qt libraries on project run.
 
 ## Media
 
+### QML
+
+Used main.qml as example from this Git [QtSharp.TestApps](https://github.com/grbd/QtSharp.TestApps/blob/master/TestApps/QtQuick/BasicLayouts1_CS/main.qml) project.
 
 ### Graphic
 
