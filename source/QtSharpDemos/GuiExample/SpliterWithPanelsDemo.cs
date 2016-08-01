@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample {
-    public class PanelsDemo : QtWidgets.QWidget {
-        public PanelsDemo ( ) {
-            WindowTitle = "Panels Demo";
+    public class SpliterWithPanelsDemo : QtWidgets.QWidget {
+        public SpliterWithPanelsDemo ( ) {
+            WindowTitle = "Spliter with Panels Demo";
 
             this.Layout = GenerateLayout ( );
             //this.ShowMaximized();

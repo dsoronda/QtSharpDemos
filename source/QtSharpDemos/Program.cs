@@ -23,7 +23,7 @@ namespace QtSharpDemos
                     var qtApp = new QApplication(ref count, null);
                 }
 
-                var labelDemo = new LabelDemo();
+                // var labelDemo = new LabelDemo();
 
                 //var windowsDemo = new WindowsDemo();
                 //var widgetDemo = new WidgetDemo();
@@ -41,10 +41,15 @@ namespace QtSharpDemos
                 //var colorDialogDemo = new ColorDialogDemo();
                 //var fontDialogDemo = new FontDialogDemo();
 
+                var panelDemo = new SpliterWithPanelsDemo();
 
+
+                // NOT WORKING : Paint need fix in QtSharp
                 //var paintDemo = new PaintDemo(); // not working properly, waiting for fix!
 
-                //var panelDemo = new PanelsDemo();
+                // QML Demos with blank window :(
+                //var qmlDemo = new QmlDemo();
+                //var quickViewDemo = new QuickViewDemo();
 
                 QApplication.Exec();
             }

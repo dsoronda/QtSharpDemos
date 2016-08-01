@@ -43,6 +43,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\QtSharp\QtGuiSharp.dll</HintPath>
     </Reference>
+    <Reference Include="QtQmlSharp">
+      <HintPath>..\..\..\..\qtsharp\QtQmlSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="QtQuickSharp">
+      <HintPath>..\..\..\..\qtsharp\QtQuickSharp.dll</HintPath>
+    </Reference>
     <Reference Include="QtWidgetsSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\QtSharp\QtWidgetsSharp.dll</HintPath>
@@ -64,10 +70,12 @@
     <Compile Include="GuiExample\ColorDialogDemo.cs" />
     <Compile Include="GuiExample\ComboBoxDemo.cs" />
     <Compile Include="GuiExample\InputDialogDemo.cs" />
-    <Compile Include="GuiExample\PanelsDemo.cs" />
+    <Compile Include="GuiExample\SpliterWithPanelsDemo.cs" />
     <Compile Include="GuiExample\PaintDemo.cs" />
     <Compile Include="GuiExample\MessageBoxDemo.cs" />
     <Compile Include="GuiExample\MenuBarDemo.cs" />
+    <Compile Include="GuiExample\QmlDemo.cs" />
+    <Compile Include="GuiExample\QuickViewDemo.cs" />
     <Compile Include="GuiExample\ToolbarDemo.cs" />
     <Compile Include="GuiExample\LabelDemo.cs" />
     <Compile Include="GuiExample\LineEditDemo.cs" />
@@ -105,6 +113,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="media\icons\system-log-out.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="media\QML\App.qml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="media\QML\Rectangle.qml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

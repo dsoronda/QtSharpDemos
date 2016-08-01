@@ -40,10 +40,10 @@ namespace QtSharpDemos.GuiExample
 		/// <param name="font">Font for text (default is Arial 12)</param>
 		public static QLabel InitLabel(string text = "Hi", QFont font = null)
 		{
-			return new QLabel(text)
-			{
-				Font = font ?? new QFont("Arial", 12)
-			}
+            return new QLabel(text)
+            {
+                Font = font ?? new QFont("Arial", 12)
+            };
 		}
 	}
 }
