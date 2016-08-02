@@ -1,4 +1,5 @@
 ﻿using QtGui;
+using QtSharpDemos.media;
 using QtWidgets;
 using System;
 using System.Collections.Generic;
@@ -14,49 +15,39 @@ namespace QtSharpDemos.GuiExample
         {
             WindowTitle = "Simple Toolbar Demo";
 
-            InitUI();
+            InitUI(this);
 
             Resize(250, 200);
             Move(100, 100);
             Show();
         }
 
-        private void InitUI()
+        public void InitUI(QWidget parentWidget)
         {
-            // load icons
-            // all icons in project should have "Copy to Output Directory" set to Copy...;
             var mediaPath = @"media\icons";
-            var newpix = new QIcon($@"{mediaPath}\document-new.png");
-            var openpix = new QIcon($@"{mediaPath}\document-open.png");
-            var quitpix = new QIcon($@"{mediaPath}\system-log-out.png");
-            var filepix = new QIcon($@"{mediaPath}\preferences-system.png");
-            var importpix = new QIcon($@"{mediaPath}\package-x-generic.png");
+
+            // load icons
+            // NOTE : all icons in project should have "Copy to Output Directory" set to Copy...;
+
+            //var filepix = new QIcon($@"{mediaPath}\preferences-system.png");
+            //var importpix = new QIcon($@"{mediaPath}\package-x-generic.png");
 
             // Create main menu
-            var menuToolbar = new QMenuBar(this);
+            var menuToolbar = new QMenuBar(parentWidget);
             var file = menuToolbar.AddMenu("&File");
-
-            file.AddAction(newpix, "New File");
-            file.AddAction(openpix, "Open File");
-
+            
+            file.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
+            file.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
 
             // create new Import sub menu
             //var importMenu = new QMenu("Import");
-            var importMenu = file.AddMenu(openpix, "&Import");
-            // create new actions
-            var seeds = new QAction("Import news feed...", this);
-            var marks = new QAction("Import bookmarks...", this);
-            var mail = new QAction("Import mail...", this);
-            // add actions to menu
-            importMenu.AddAction(seeds);
-            importMenu.AddAction(marks);
-            importMenu.AddAction(mail);
-
-            // add Import to main menu
-            file.AddMenu(importMenu);
+            var importMenu = file.AddMenu(MediaIconHelper.OpenDocumentIcon, "&Import");
+            importMenu.AddAction(new QAction("Import news feed...", null));
+            importMenu.AddAction(new QAction("Import bookmarks...", null));
+            importMenu.AddAction(new QAction("Import mail...", null));
 
             // create sub menu
-            var quit = new QAction(quitpix, "&Quit", this);
+            var quit = new QAction(MediaIconHelper.SystemLogOugIcon, "&Quit", null);
             // add it to main menu
             file.AddAction(quit);
 

@@ -21,10 +21,10 @@ namespace QtSharpDemoApplication
                 unsafe
                 {
                     var qtApp = new QApplication(ref count, null);
-                  
                 }
 
-                var testApp = new Widgets.TestApplication();
+                // create MainWindow
+                var mainWindow = new Widgets.MainWindow();
 
                 // Run the QApplication Process
                 QGuiApplication.Exec();

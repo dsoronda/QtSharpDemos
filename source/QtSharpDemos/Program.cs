@@ -25,7 +25,7 @@ namespace QtSharpDemos
                     //var qtApp = new QGuiApplication(ref count, null);
                 }
 
-                var labelDemo = new LabelDemo();
+                //var labelDemo = new LabelDemo();
 
                 //var windowsDemo = new WindowsDemo();
                 //var widgetDemo = new WidgetDemo();
@@ -36,8 +36,8 @@ namespace QtSharpDemos
                 //var lineEditDemo = new LineEditDemo();
                 //var togleButtonsDemo = new TogleButtonsDemo();
                 //var comboBoxDemo = new ComboBoxDemo();
-                //var menuBar = new MenuBarDemo();
-                //var menuToolbarDemo = new ToolbarDemo();
+                var menuBar = new MenuBarDemo();
+                //var toolbarDemo = new ToolbarDemo();
                 //var messageBoxDemo = new MessageBoxDemo();
                 //var inputDialogDemo = new InputDialogDemo();
                 //var colorDialogDemo = new ColorDialogDemo();

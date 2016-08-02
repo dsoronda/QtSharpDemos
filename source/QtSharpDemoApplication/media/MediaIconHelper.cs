@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QtSharpDemos.media
+namespace QtSharpDemoApplication.media
 {
     /// <summary>
     /// Helper class that loads icons from disk

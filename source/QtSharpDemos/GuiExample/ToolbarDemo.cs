@@ -9,25 +9,25 @@ using QtSharpDemos.media;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class ToolbarDemo : QtWidgets.QWidget
+    /// <summary>
+    /// Container for QToolBar
+    /// </summary>
+    public class ToolbarDemo : QWidget
     {
         public ToolbarDemo()
         {
-            WindowTitle = "Simple menu demo";
-
-            InitUI();
+            WindowTitle = "Simple toolbar demo";
+            // add toolbar to widget
+            var toolbar = new QToolBar(this);
+            InitUI(toolbar);
 
             Resize(250, 200);
-            Move(100, 100);
+            //Move(100, 100);
             Show();
         }
 
-        private void InitUI()
+        private void InitUI(QToolBar toolbar)
         {
-            // Create main toolbar 
-
-            var toolbar = new QToolBar("main toolbar", this);
-
             toolbar.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
             toolbar.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
             toolbar.AddSeparator();
@@ -35,11 +35,10 @@ namespace QtSharpDemos.GuiExample
 
             quit.Triggered += Quit_Triggered;
         }
-        
+
         private void Quit_Triggered(bool obj)
         {
-            this.Close();
-           // QApplication.Quit();
+            QApplication.CloseAllWindows();
         }
 
     }

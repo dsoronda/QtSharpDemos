@@ -56,8 +56,8 @@
     <Compile Include="media\MediaIconHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Widgets\MyMenuBar.cs" />
-    <Compile Include="Widgets\TestApplication.cs" />
+    <Compile Include="Widgets\MyMenuBarHelper.cs" />
+    <Compile Include="Widgets\MainWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

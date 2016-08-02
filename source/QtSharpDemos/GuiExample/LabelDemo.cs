@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
+    /// <summary>
+    /// Note : A widget that is not embedded in a parent widget is called a window (from Qt documentation)
+    /// </summary>
 	public class LabelDemo : QtWidgets.QWidget
 	{
 		public LabelDemo()
