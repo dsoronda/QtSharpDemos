@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdc62af9-521d-424c-b222-5242899ec984" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QtSharpDemoApplication/QtSharpDemoApplication.csproj" afterPath="$PROJECT_DIR$/QtSharpDemoApplication/QtSharpDemoApplication.csproj" />
-    </list>
+    <list default="true" id="bdc62af9-521d-424c-b222-5242899ec984" name="Default" comment="" />
     <ignored path="source.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,33 +26,33 @@
             <state relative-caret-position="-63">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1470153020475" expanded="true" signature="6:181" ph="..." />
-                <marker date="1470153020475" expanded="true" signature="223:1704" ph="{...}" />
-                <marker date="1470153020475" expanded="true" signature="265:1701" ph="{...}" />
-                <marker date="1470153020475" expanded="true" signature="335:1541" ph="{...}" />
-                <marker date="1470153020475" expanded="true" signature="1595:1694" ph="{...}" />
+                <marker date="1470154760889" expanded="true" signature="6:181" ph="..." />
+                <marker date="1470154760889" expanded="true" signature="223:1612" ph="{...}" />
+                <marker date="1470154760889" expanded="true" signature="265:1609" ph="{...}" />
+                <marker date="1470154760889" expanded="true" signature="335:1449" ph="{...}" />
+                <marker date="1470154760889" expanded="true" signature="1503:1602" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QtSharpDemoApplication/Widgets/MainWindow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="380">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1470154535064" expanded="true" signature="6:132" ph="..." />
-                <marker date="1470154535064" expanded="true" signature="174:914" ph="{...}" />
-                <marker date="1470154535064" expanded="true" signature="181:338" ph="/// ..." />
-                <marker date="1470154535064" expanded="true" signature="390:912" ph="{...}" />
-                <marker date="1470154535064" expanded="true" signature="424:905" ph="{...}" />
+                <marker date="1470154983752" expanded="true" signature="6:132" ph="..." />
+                <marker date="1470154983752" expanded="true" signature="174:1100" ph="{...}" />
+                <marker date="1470154983752" expanded="true" signature="181:338" ph="/// ..." />
+                <marker date="1470154983752" expanded="true" signature="390:1098" ph="{...}" />
+                <marker date="1470154983752" expanded="true" signature="424:1091" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyToolbar.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyToolbar.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/QtSharpDemoApplication/Widgets/MyToolbar.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -339,25 +336,11 @@
         <state relative-caret-position="-63">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1470153020475" expanded="true" signature="6:181" ph="..." />
-            <marker date="1470153020475" expanded="true" signature="223:1704" ph="{...}" />
-            <marker date="1470153020475" expanded="true" signature="265:1701" ph="{...}" />
-            <marker date="1470153020475" expanded="true" signature="335:1541" ph="{...}" />
-            <marker date="1470153020475" expanded="true" signature="1595:1694" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QtSharpDemoApplication/Widgets/MainWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <marker date="1470154535064" expanded="true" signature="6:132" ph="..." />
-            <marker date="1470154535064" expanded="true" signature="174:914" ph="{...}" />
-            <marker date="1470154535064" expanded="true" signature="181:338" ph="/// ..." />
-            <marker date="1470154535064" expanded="true" signature="390:912" ph="{...}" />
-            <marker date="1470154535064" expanded="true" signature="424:905" ph="{...}" />
+            <marker date="1470154760889" expanded="true" signature="6:181" ph="..." />
+            <marker date="1470154760889" expanded="true" signature="223:1612" ph="{...}" />
+            <marker date="1470154760889" expanded="true" signature="265:1609" ph="{...}" />
+            <marker date="1470154760889" expanded="true" signature="335:1449" ph="{...}" />
+            <marker date="1470154760889" expanded="true" signature="1503:1602" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -373,6 +356,20 @@
             <marker date="1470154599394" expanded="true" signature="283:414" ph="{...}" />
             <marker date="1470154599394" expanded="true" signature="461:818" ph="{...}" />
             <marker date="1470154599394" expanded="true" signature="865:929" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QtSharpDemoApplication/Widgets/MainWindow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1470154983752" expanded="true" signature="6:132" ph="..." />
+            <marker date="1470154983752" expanded="true" signature="174:1100" ph="{...}" />
+            <marker date="1470154983752" expanded="true" signature="181:338" ph="/// ..." />
+            <marker date="1470154983752" expanded="true" signature="390:1098" ph="{...}" />
+            <marker date="1470154983752" expanded="true" signature="424:1091" ph="{...}" />
           </folding>
         </state>
       </provider>

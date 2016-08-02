@@ -21,5 +21,8 @@ namespace QtSharpDemoApplication.media
         public static readonly QIcon SystemLogOugIcon = new QIcon($@"{MediaPath}\system-log-out.png");
         public static readonly QIcon PreferencesSystemIcon = new QIcon($@"{MediaPath}\preferences-system.png");
         public static readonly QIcon PackageGenericIcon = new QIcon($@"{MediaPath}\package-x-generic.png");
+        public static readonly QIcon InformationIcon = new QIcon($@"{MediaPath}\dialog-information.png");
+        public static readonly QIcon HelpIcon = new QIcon($@"{MediaPath}\help-browser.png");
+        
     }
 }
