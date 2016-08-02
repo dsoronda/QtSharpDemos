@@ -20,8 +20,12 @@ namespace QtSharpDemoApplication.Widgets
             // main window already have QMenuBar
             MyMenuBarHelper.InitMenuBarUI(this.MenuBar);
 
-        	// We may have more than one Toolbar, so we create one and add it to main window
-            //MyToolBarHelper.InitToolbarUI(this.tool)
+            // We may have more than one Toolbar, so we create one and add it to main window
+            this.AddToolBar(new MyToolbar());
+
+            // main window already have status bar, 
+            // it's not displayed until we reference it linke in next line
+            MyStatusBarHelper.InitStatusBarUI(this.StatusBar);
 
             // NOTE : Central widget is required !
             this.CentralWidget = new QLabel("Hello world");

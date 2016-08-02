@@ -13,20 +13,15 @@ namespace QtSharpDemoApplication.Widgets
     {
         public static void InitMenuBarUI(QMenuBar parendWidget)
         {
-            // load icons
-            // all icons in project should have "Copy to Output Directory" set to Copy...;
-            var mediaPath = @"media\icons";
+            var fileRootMenuItem = parendWidget.AddMenu("&File");
 
-
-            var file = parendWidget.AddMenu("&File");
-
-            file.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
-            file.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
+            fileRootMenuItem.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
+            fileRootMenuItem.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
 
 
             // create new Import sub menu
             //var importMenu = new QMenu("Import");
-            var importMenu = file.AddMenu(MediaIconHelper.OpenDocumentIcon, "&Import");
+            var importMenu = fileRootMenuItem.AddMenu(MediaIconHelper.OpenDocumentIcon, "&Import");
 
             // add actions to menu
             importMenu.AddAction(new QAction("Import news feed...", null));
@@ -34,13 +29,13 @@ namespace QtSharpDemoApplication.Widgets
             importMenu.AddAction(new QAction("Import mail...", null));
 
             // add Import to main menu
-            file.AddMenu(importMenu);
+            fileRootMenuItem.AddMenu(importMenu);
 
             // create sub menu
-            var quit = new QAction(new QIcon($@"{mediaPath}\system-log-out.png"), "&Quit", file);
+            var quit = new QAction(MediaIconHelper.SystemLogOugIcon, "&Quit", fileRootMenuItem);
             // add it to main menu
 
-            file.AddAction(quit);
+            fileRootMenuItem.AddAction(quit);
 
             // Menus are displayed in created order
             quit.Triggered += Quit_Triggered;
