@@ -78,7 +78,6 @@
     <Compile Include="GuiExample\PaintDemo.cs" />
     <Compile Include="GuiExample\MessageBoxDemo.cs" />
     <Compile Include="GuiExample\MenuBarDemo.cs" />
-    <Compile Include="GuiExample\QuickViewDemo.cs" />
     <Compile Include="GuiExample\ToolbarDemo.cs" />
     <Compile Include="GuiExample\LabelDemo.cs" />
     <Compile Include="GuiExample\LineEditDemo.cs" />

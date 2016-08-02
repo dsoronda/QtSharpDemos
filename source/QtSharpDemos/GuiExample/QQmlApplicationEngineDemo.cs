@@ -17,9 +17,7 @@ namespace QtSharpDemos.GuiExample
         const string MainQml = @"media\QML\main.qml";
         public QQmlApplicationEngineDemo()
         {
-
             var QmlEngine = new QQmlApplicationEngine(MainQml);
-
         }
     }
 }
