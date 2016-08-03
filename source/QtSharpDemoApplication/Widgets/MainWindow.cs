@@ -13,15 +13,21 @@ namespace QtSharpDemoApplication.Widgets
     /// </summary>
     public class MainWindow : QtWidgets.QMainWindow
     {
+        // NOTE : This is not proper way to handle actions across Widgets
+        // Have to check how Qt examples handle this
+        // Just wanted to see if this works
+        Dictionary<string, QAction> ActionDictionary = new Dictionary<string, QAction>();
+
         public MainWindow()
         {
             WindowTitle = "Test application";
-
+            this.ActionDictionary.Add("About", GetAboutActions(this));
             // main window already have QMenuBar
-            MyMenuBarHelper.InitMenuBarUI(this.MenuBar);
+            MyMenuBarHelper.InitMenuBarUI(this.MenuBar, ActionDictionary);
+           // this.MenuBar.AddAction();
 
             // We may have more than one Toolbar, so we create one and add it to main window
-            this.AddToolBar(new MyToolbar());
+            this.AddToolBar(new MyToolbar(ActionDictionary));
 
             // main window already have status bar, 
             // it's not displayed until we reference it linke in next line
@@ -33,5 +39,25 @@ namespace QtSharpDemoApplication.Widgets
             Show();
         }
 
+        private QAction GetAboutActions(MainWindow mainWindow)
+        {
+            var aboutAction = new QAction(media.MediaIconHelper.InformationIcon, "&About", null);
+
+            //aboutAction.SetShortcuts(QKeySequence.Open);
+            aboutAction.StatusTip = "Show about dialog";
+            aboutAction.Triggered += AboutAction_Triggered;
+
+            //aboutAction(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+            //fileMenu->addAction(openAct);
+            //fileToolBar->addAction(openAct);
+            return aboutAction;
+        }
+
+        private void AboutAction_Triggered(bool obj)
+        {
+            // show about dialog
+            QMessageBox.About(this, "About", "QtSharp Message box example."); ;
+        }
     }
 }

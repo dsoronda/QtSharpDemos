@@ -13,24 +13,24 @@ namespace QtSharpDemos.GuiExample
         public MessageBoxDemo()
         {
             WindowTitle = "MessageBox Demo";
+            var grid = new QGridLayout(this);
 
-            InitUI();
+            InitUI(grid);
 
             Resize(250, 150);
             Move(300, 300);
             Show();
         }
 
-        public void InitUI()
+        public void InitUI(QGridLayout grid)
         {
-            var grid = new QGridLayout(this);
             grid.Spacing = 2;
 
-            var errorButton = new QPushButton("Error", this);
-            var warnimgButton = new QPushButton("Warning", this);
-            var questionButton = new QPushButton("Question", this);
-            var informationButton = new QPushButton("Information", this);
-            var aboutButton = new QPushButton("About", this);
+            var errorButton = new QPushButton("Error");
+            var warnimgButton = new QPushButton("Warning");
+            var questionButton = new QPushButton("Question");
+            var informationButton = new QPushButton("Information");
+            var aboutButton = new QPushButton("About");
 
             grid.AddWidget(errorButton, 0, 0);
             grid.AddWidget(warnimgButton, 0, 1);

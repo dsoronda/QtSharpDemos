@@ -10,20 +10,21 @@ namespace QtSharpDemoApplication.Widgets
 {
     public class MyToolbar : QToolBar
     {
-        public MyToolbar()
+        public MyToolbar(Dictionary<string, QAction> actions)
         {
             // add toolbar to widget
             //var toolbar = new QToolBar(this);
-            InitUI(this);
+            InitUI(this, actions);
         }
 
-        private void InitUI(QToolBar toolbar)
+        private void InitUI(QToolBar toolbar, Dictionary<string, QAction> actions)
         {
             toolbar.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
             toolbar.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
             toolbar.AddSeparator();
+            toolbar.AddAction(actions["About"]);
+      
             QAction quit = toolbar.AddAction(MediaIconHelper.SystemLogOugIcon, "Quit Application");
-
             quit.Triggered += Quit_Triggered;
         }
 

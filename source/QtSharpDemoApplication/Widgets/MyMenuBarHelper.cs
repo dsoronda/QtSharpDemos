@@ -11,20 +11,20 @@ namespace QtSharpDemoApplication.Widgets
 {
     public static class MyMenuBarHelper
     {
-        public static void InitMenuBarUI(QMenuBar parendWidget)
+        public static void InitMenuBarUI(QMenuBar parendWidget, Dictionary<string, QAction> actions)
         {
-            var fileRootMenu = parendWidget.AddMenu("&File");
-            InitFileMenu(fileRootMenu);
-
-            var aboutRootMenu = parendWidget.AddMenu("&Help");
-            InitAboutMenu(aboutRootMenu);
+            InitFileMenu(parendWidget.AddMenu("&File"));
+            parendWidget.AddMenu("&Edit");
+            parendWidget.AddMenu("&Tools");
+            InitAboutMenu(parendWidget.AddMenu("&Help"), actions);
         }
 
-        private static void InitAboutMenu(QMenu rootMenu)
+        private static void InitAboutMenu(QMenu rootMenu, Dictionary<string, QAction> actions)
         {
             rootMenu.AddAction( MediaIconHelper.HelpIcon, "Help");
             rootMenu.AddSeparator();
-            rootMenu.AddAction(MediaIconHelper.NewDocumentIcon, "About");
+            //rootMenu.AddAction(MediaIconHelper.NewDocumentIcon, "About");
+            rootMenu.AddAction(actions["About"]);
         }
 
         private static void InitFileMenu(QMenu rootMenu)
