@@ -36,7 +36,7 @@ namespace QtSharpDemos
                 //var lineEditDemo = new LineEditDemo();
                 //var togleButtonsDemo = new TogleButtonsDemo();
                 //var comboBoxDemo = new ComboBoxDemo();
-                var menuBar = new MenuBarDemo();
+                // var menuBar = new MenuBarDemo();
                 //var toolbarDemo = new ToolbarDemo();
                 //var messageBoxDemo = new MessageBoxDemo();
                 //var inputDialogDemo = new InputDialogDemo();
@@ -47,7 +47,7 @@ namespace QtSharpDemos
 
 
                 // NOT WORKING : Paint need fix in QtSharp
-                //var paintDemo = new PaintDemo(); // not working properly, waiting for fix!
+                var paintDemo = new PaintDemo(); // not working properly, waiting for fix!
 
                 // load QML file
                 //var qQmlApplicationEngineDemo = new QQmlApplicationEngineDemo();

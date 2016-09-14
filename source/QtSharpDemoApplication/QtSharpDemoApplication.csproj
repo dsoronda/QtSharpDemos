@@ -34,14 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="QtCoreSharp">
-      <HintPath>..\..\..\..\qtsharp\QtCoreSharp.dll</HintPath>
+    <Reference Include="QtCore.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtCore.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtGuiSharp">
-      <HintPath>..\..\..\..\qtsharp\QtGuiSharp.dll</HintPath>
+    <Reference Include="QtGui.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtGui.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtWidgetsSharp">
-      <HintPath>..\..\..\..\qtsharp\QtWidgetsSharp.dll</HintPath>
+    <Reference Include="QtWidgets.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtWidgets.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

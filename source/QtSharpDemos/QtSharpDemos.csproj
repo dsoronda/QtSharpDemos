@@ -35,26 +35,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="QtCoreSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtCoreSharp.dll</HintPath>
+    <Reference Include="QtCore.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtCore.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtGuiSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtGuiSharp.dll</HintPath>
+    <Reference Include="QtGui.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtGui.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtQmlSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQmlSharp.dll</HintPath>
+    <Reference Include="QtQml.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtQml.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="QtQuick.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtQuick.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="QtQuickSharp">
       <HintPath>..\..\..\..\qtsharp\QtQuickSharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtQuickWidgetsSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQuickWidgetsSharp.dll</HintPath>
+    <Reference Include="QtQuickWidgets.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtQuickWidgets.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtWidgetsSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\QtSharp\QtWidgetsSharp.dll</HintPath>
+    <Reference Include="QtWidgets.Sharp">
+      <HintPath>..\..\..\..\qtsharp\QtWidgets.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

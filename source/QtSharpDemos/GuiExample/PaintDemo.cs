@@ -21,8 +21,8 @@ namespace QtSharpDemos.GuiExample
             // used this from http://zetcode.com/gui/csharpqyoto/painting/
             this.PaintEvent += MyPaintEvent;
 
-            Resize(250, 150);
-            Move(300, 300);
+            Resize(400, 300);
+            //Move(300, 300);
             Show();
         }
 
@@ -53,8 +53,9 @@ namespace QtSharpDemos.GuiExample
 
             // this.InitPainter(painter);    // throws Access Violation exception , same as abowe, if commented nothing is drawn on widget
 
-            DrawPatterns(painter);
+            //DrawPatterns(painter);
 
+            DrawPatternsEx ( painter );
             painter.End();
         }
 
