@@ -73,6 +73,7 @@
     <Compile Include="GuiExample\ColorDialogDemo.cs" />
     <Compile Include="GuiExample\ComboBoxDemo.cs" />
     <Compile Include="GuiExample\InputDialogDemo.cs" />
+    <Compile Include="GuiExample\PaintShapesDemo.cs" />
     <Compile Include="GuiExample\QQmlApplicationEngineDemo.cs" />
     <Compile Include="GuiExample\SpliterWithPanelsDemo.cs" />
     <Compile Include="GuiExample\PaintDemo.cs" />

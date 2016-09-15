@@ -46,8 +46,8 @@ namespace QtSharpDemos
                 //var panelDemo = new SpliterWithPanelsDemo();
 
 
-                // NOT WORKING : Paint need fix in QtSharp
-                var paintDemo = new PaintDemo(); // not working properly, waiting for fix!
+                //var paintDemo = new PaintDemo();
+                var paintShapesDemo = new PaintShapesDemo();
 
                 // load QML file
                 //var qQmlApplicationEngineDemo = new QQmlApplicationEngineDemo();
