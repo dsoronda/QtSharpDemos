@@ -26,7 +26,7 @@ namespace QtSharpDemos.GuiExample
             base.OnPaintEvent(e);
 
             // this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
-            var painter = new QPainter(this);// throws Access Violation exception
+            var painter = new QPainter(this);
             painter.SetRenderHint ( QPainter.RenderHint.Antialiasing );
 
             DrawPatternsEx ( painter );

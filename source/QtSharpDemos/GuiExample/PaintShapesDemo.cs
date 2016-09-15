@@ -23,7 +23,7 @@ namespace QtSharpDemos.GuiExample {
             base.OnPaintEvent ( e );
 
             // this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
-            var painter = new QPainter(this);// throws Access Violation exception
+            var painter = new QPainter(this);
 
             DrawShapes ( painter );
             painter.End ( );
@@ -43,7 +43,8 @@ namespace QtSharpDemos.GuiExample {
 
             painter.DrawPie ( 130, 20, 90, 60, 30 * 16, 120 * 16 );
             painter.DrawChord ( 240, 30, 90, 60, 0, 16 * 180 );
-            painter.DrawRoundRect ( new QRect ( 20, 120, 80, 50 ) );
+            var rectangle = new QRect(new QPoint(20,120),new QSize(80,50));
+            painter.DrawRoundedRect ( rect: rectangle, xRadius: 10, yRadius: 10 );            
 
             //var points = new List<QPoint>();
             //points.Add ( new QPoint ( 130, 140 ) );
@@ -52,6 +53,7 @@ namespace QtSharpDemos.GuiExample {
             //points.Add ( new QPoint ( 220, 110 ) );
             //points.Add ( new QPoint ( 140, 100 ) );
 
+            //// http://doc.qt.io/qt-5/qpolygon.html#QPolygon-2 , we should be able to pase point list
             //var polygon = new QPolygon(points);
             //painter.DrawPolygon ( polygon );
 
