@@ -9,9 +9,9 @@ using QtCore.Qt;
 using QtCore;
 
 namespace QtSharpDemos.GuiExample {
-    public class PaintShapesDemo : QtWidgets.QWidget {
+    public class Paint_ShapesDemo : QtWidgets.QWidget {
 
-        public PaintShapesDemo ( ) {
+        public Paint_ShapesDemo ( ) {
             WindowTitle = "Paint Demo";
 
             Resize ( 400, 300 );
@@ -22,7 +22,6 @@ namespace QtSharpDemos.GuiExample {
         protected override void OnPaintEvent ( QPaintEvent e ) {
             base.OnPaintEvent ( e );
 
-            // this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
             var painter = new QPainter(this);
 
             DrawShapes ( painter );

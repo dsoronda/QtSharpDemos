@@ -47,7 +47,9 @@ namespace QtSharpDemos
 
 
                 //var paintDemo = new PaintDemo();
-                var paintShapesDemo = new PaintShapesDemo();
+                //var paint_ShapesDemo= new Paint_ShapesDemo();
+                //var paint_TransparentRectDemo = new Paint_TransparentRectDemo();
+                var paint_TextDemo= new Paint_TextDemo();
 
                 // load QML file
                 //var qQmlApplicationEngineDemo = new QQmlApplicationEngineDemo();
