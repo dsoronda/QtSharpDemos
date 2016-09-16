@@ -52,24 +52,29 @@ namespace QtSharpDemos.GuiExample {
                     var point = new QPoint(x, y); // pixel position
 
                     //var color = originalImage.PixelColor ( row, pixelInRow );
-                    var color = originalImage.PixelColor ( point );
+                    using ( var color = originalImage.PixelColor ( point ) ) {
 
-                    //var pixel = originalImage.Pixel(row, pixelInRow);
-                    UInt32 pixel = originalImage.Pixel(point);
-                    // how to convert pixel to QRgba ??
-                    //QRgba rgbaPixel = (QRgba) pixel;
+                        //var pixel = originalImage.Pixel(row, pixelInRow);
+                        UInt32 pixel = originalImage.Pixel(point);
+                        // how to convert pixel to QRgba ??
+                        //QRgba rgbaPixel = (QRgba) pixel;
 
-                    // [QtSharp - missing implementation of qGray](http://doc.qt.io/qt-4.8/qcolor.html#qGray)
-                    // int gray = color.Gray;
-                    // The gray value is calculated using the formula ( r * 11 + g * 16 + b * 5 ) / 32.
-                    int gray = ((color.Red *11) + (color.Green * 16) + (color.Blue * 5)) /32;
+                        // [QtSharp - missing implementation of qGray](http://doc.qt.io/qt-4.8/qcolor.html#qGray)
+                        // int gray = color.Gray;
+                        // The gray value is calculated using the formula ( r * 11 + g * 16 + b * 5 ) / 32.
+                        //int gray = ((color.Red *11) + (color.Green * 16) + (color.Blue * 5)) /32;
 
-                    int alpha = color.Alpha;
-                    // how to create QRgba ?
+                        int alpha = color.Alpha;
+                        int gray = qrgb.QGray ( pixel );
 
-                    // QColor is not disposed !!!
-                    // Memory profiler shows a bunch of IDictionary <QColors> on HEAP
-                    newImage.SetPixelColor ( point, new QColor ( gray, gray, gray, alpha ) ); 
+                        // how to create QRgba ?
+
+                        // QColor is not disposed !!! Put into using for now 
+                        // Memory profiler shows a bunch of IDictionary <QColors> on HEAP
+                        using ( var qColor = new QColor ( gray, gray, gray, alpha ) ) {
+                            newImage.SetPixelColor ( point, qColor );
+                        }
+                    }
                 }
             }
 
