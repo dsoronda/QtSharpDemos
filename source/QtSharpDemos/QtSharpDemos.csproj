@@ -73,6 +73,8 @@
     <Compile Include="GuiExample\ColorDialogDemo.cs" />
     <Compile Include="GuiExample\ComboBoxDemo.cs" />
     <Compile Include="GuiExample\InputDialogDemo.cs" />
+    <Compile Include="GuiExample\Paint_GrayscaleImage.cs" />
+    <Compile Include="GuiExample\Paint_DonutDemo.cs" />
     <Compile Include="GuiExample\Paint_TextDemo.cs" />
     <Compile Include="GuiExample\Paint_TransparentRectDemo.cs" />
     <Compile Include="GuiExample\Paint_ShapesDemo.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="GuiExample\WidgetDemo.cs" />
     <Compile Include="GuiExample\QuitButtonDemo.cs" />
     <Compile Include="GuiExample\WindowsDemo.cs" />
+    <Compile Include="media\MediaGfxHelper.cs" />
     <Compile Include="media\MediaIconHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

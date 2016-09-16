@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 using QtSharpDemos.GuiExample;
 using QtGui;
 
-namespace QtSharpDemos
-{
-    class Program
-    {
-        static int Main(string[] args)
-        {
+namespace QtSharpDemos {
+    class Program {
+        static int Main ( string[] args ) {
             // Init QT application
             int count = 0;
             // project-> properties -> allow unsafe code (must ce checked for now)
-            try
-            {
+            try {
                 // added try/catch block so we can log exception errors
                 unsafe
                 {
@@ -49,7 +45,9 @@ namespace QtSharpDemos
                 //var paintDemo = new PaintDemo();
                 //var paint_ShapesDemo= new Paint_ShapesDemo();
                 //var paint_TransparentRectDemo = new Paint_TransparentRectDemo();
-                var paint_TextDemo= new Paint_TextDemo();
+                //var paint_TextDemo= new Paint_TextDemo();
+                //var paint_DonutDemo= new Paint_DonutDemo();
+                var paint_GrayscaleImage = new Paint_GrayscaleImage();
 
                 // load QML file
                 //var qQmlApplicationEngineDemo = new QQmlApplicationEngineDemo();
@@ -58,15 +56,13 @@ namespace QtSharpDemos
                 //return QApplication.Exec();
 
                 // Run the QApplication Process ( this also works)
-                return QGuiApplication.Exec();
+                return QGuiApplication.Exec ( );
 
                 //  Console.WriteLine("All done");
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.ReadKey();
+            } catch ( Exception ex ) {
+                Console.WriteLine ( ex.Message );
+                Console.ReadKey ( );
 
                 // throw;
             }
