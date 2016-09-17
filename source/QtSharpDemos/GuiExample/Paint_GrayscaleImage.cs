@@ -43,34 +43,18 @@ namespace QtSharpDemos.GuiExample {
         /// <param name="originalImage"></param>
         /// <returns></returns>
         public static QImage ConvertToGrayScale ( QImage originalImage ) {
-            //var newImage = originalImage.Copy(); // this is misleading bug!
-            // new image is QSize (1,1) instead exact copy of original image
-            var newImage = originalImage.Copy(originalImage.Rect);
+            var newImage = originalImage.Copy();
 
             for ( int x = 0 ; x < originalImage.Width ; x++ ) {
                 for ( int y = 0 ; y < originalImage.Height ; y++ ) {
                     var point = new QPoint(x, y); // pixel position
 
-                    //var color = originalImage.PixelColor ( row, pixelInRow );
                     using ( var color = originalImage.PixelColor ( point ) ) {
 
-                        //var pixel = originalImage.Pixel(row, pixelInRow);
                         UInt32 pixel = originalImage.Pixel(point);
-                        // how to convert pixel to QRgba ??
-                        //QRgba rgbaPixel = (QRgba) pixel;
-
-                        // [QtSharp - missing implementation of qGray](http://doc.qt.io/qt-4.8/qcolor.html#qGray)
-                        // int gray = color.Gray;
-                        // The gray value is calculated using the formula ( r * 11 + g * 16 + b * 5 ) / 32.
-                        //int gray = ((color.Red *11) + (color.Green * 16) + (color.Blue * 5)) /32;
-
                         int alpha = color.Alpha;
                         int gray = qrgb.QGray ( pixel );
 
-                        // how to create QRgba ?
-
-                        // QColor is not disposed !!! Put into using for now 
-                        // Memory profiler shows a bunch of IDictionary <QColors> on HEAP
                         using ( var qColor = new QColor ( gray, gray, gray, alpha ) ) {
                             newImage.SetPixelColor ( point, qColor );
                         }
@@ -106,4 +90,5 @@ namespace QtSharpDemos.GuiExample {
         }
         */
     }
+
 }
