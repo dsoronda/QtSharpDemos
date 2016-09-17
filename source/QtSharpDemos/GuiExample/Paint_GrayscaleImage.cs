@@ -17,6 +17,7 @@ namespace QtSharpDemos.GuiExample {
             WindowTitle = "Paint Grayscale Demo";
             colorImage = media.MediaGfxHelper.PancakeImage.ScaledToWidth ( 400, mode: TransformationMode.SmoothTransformation ); // get image
             grayscaleImage = ConvertToGrayScale ( colorImage );
+            //grayscaleImage = ConvertToGrayScaleIndexed ( colorImage );
 
             Resize ( 840, 400 );
             Show ( );
@@ -65,30 +66,66 @@ namespace QtSharpDemos.GuiExample {
             return newImage;
         }
 
-        /*
-        public static QImage GrayScale_Scanline (QImage image) {
-            var newImage = new QImage(image.Size,QImage.Format.Format_Grayscale8);
+        /// <summary>
+        /// Convert Image to grayscale indexed image (like GIF)
+        /// </summary>
+        /// <param name="originalImage"></param>
+        /// <returns></returns>
+        public static QImage ConvertToGrayScaleIndexed ( QImage originalImage ) {
+            var newImage = new QImage(originalImage.Size, QImage.Format.Format_Grayscale8);
 
-            var colorTable = new QRgb[256];
-            QVector<QRgb> my_table;
-            for ( int i = 0 ; i < 256 ; i++ ) my_table.push_back ( qRgb ( i, i, i ) );
-            qi->setColorTable ( my_table );
+            // Generate grayscale color table
+            var my_table = new QColor[256];
+            for ( int i = 0 ; i < 256 ; i++ ) my_table[i].SetRgb ( i, i, i );
+            // Add color table to image
+            // [looking at example](http://stackoverflow.com/questions/5504768/how-to-use-a-color-lut-in-qt-qimage)
+            
+            /* this is C++ code example
+            QImage image(data, imwidth, imheight, QImage::Format_Indexed8);
+            QVector<QRgb> colorTable;
+            // Translate each color in lutData to a QRgb and push it onto colorTable;
+            image.setColorTable ( colorTable );
+            */
 
+            //newImage.ColorTable = my_table;
 
-            for ( int rowCount = 0 ; rowCount < image.Height ; rowCount++ ) {
-                byte* line = image.ScanLine ( rowCount );
-                uchar* scan = image.scanLine(rowCount);
-                int depth =4;
-                for ( int jj = 0 ; jj < image.width ( ) ; jj++ ) {
+            for ( int x = 0 ; x < originalImage.Width ; x++ ) {
+                for ( int y = 0 ; y < originalImage.Height ; y++ ) {
+                    var point = new QPoint(x, y); // pixel position
 
-                    QRgb* rgbpixel = reinterpret_cast<QRgb*>(scan + jj*depth);
-                    int gray = qGray(*rgbpixel);
-                    *rgbpixel = QColor ( gray, gray, gray ).rgba ( );
+                    UInt32 pixel = originalImage.Pixel(point);
+                    var gray = (uint) qrgb.QGray ( pixel );
+                    newImage.SetPixel ( point, gray );
                 }
             }
+
             return newImage;
         }
-        */
+
+        //public static QImage GrayScale_Scanline (QImage image) {
+        //    var newImage = new QImage(image.Size,QImage.Format.Format_Grayscale8);
+
+        //    var my_table = new QColor[256];
+        //    for ( int i = 0 ; i < 256 ; i++ ) my_table[i].SetRgb ( i, i, i ) ;
+
+        //    newImage.setpi
+        //    qi->setColorTable ( my_table );
+
+
+        //    for ( int rowCount = 0 ; rowCount < image.Height ; rowCount++ ) {
+        //        byte* line = image.ScanLine ( rowCount );
+        //        uchar* scan = image.scanLine(rowCount);
+        //        int depth = 4;
+        //        for ( int jj = 0 ; jj < image.width ( ) ; jj++ ) {
+
+        //            QRgb* rgbpixel = reinterpret_cast<QRgb*>(scan + jj*depth);
+        //            int gray = qGray(*rgbpixel);
+        //            *rgbpixel = QColor ( gray, gray, gray ).rgba ( );
+        //        }
+        //    }
+        //    return newImage;
+        //}
+
     }
 
 }
