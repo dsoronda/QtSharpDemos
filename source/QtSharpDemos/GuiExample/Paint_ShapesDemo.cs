@@ -43,8 +43,9 @@ namespace QtSharpDemos.GuiExample {
             painter.DrawPie ( 130, 20, 90, 60, 30 * 16, 120 * 16 );
             painter.DrawChord ( 240, 30, 90, 60, 0, 16 * 180 );
             var rectangle = new QRect(new QPoint(20,120),new QSize(80,50));
-            painter.DrawRoundedRect ( rect: rectangle, xRadius: 10, yRadius: 10 );            
+            painter.DrawRoundedRect ( rect: rectangle, xRadius: 10, yRadius: 10 );
 
+            // to be implemented
             //var points = new List<QPoint>();
             //points.Add ( new QPoint ( 130, 140 ) );
             //points.Add ( new QPoint ( 180, 170 ) );
@@ -55,6 +56,19 @@ namespace QtSharpDemos.GuiExample {
             //// http://doc.qt.io/qt-5/qpolygon.html#QPolygon-2 , we should be able to pase point list
             //var polygon = new QPolygon(points);
             //painter.DrawPolygon ( polygon );
+
+            // this is workaround for DrawPolygon
+            unsafe
+            {
+                var polygon = new QPolygon();
+                var points = new int[] { 130, 140, 180, 170, 180, 140, 220, 110, 140, 100 };
+                fixed ( int* point = points ) {
+                    polygon.SetPoints ( points.Length / 2, ref *point );
+                }
+                painter.DrawPolygon ( polygon );
+            }
+
+
 
             painter.DrawRect ( 250, 110, 60, 60 );
 

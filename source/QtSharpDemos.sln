@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QtSharpDemoApplication", "QtSharpDemoApplication\QtSharpDemoApplication.csproj", "{ADC1E1C4-91A1-4B5B-B57F-B1704ABA6758}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QtSharpQtDemos", "QtSharpQtDemos\QtSharpQtDemos.csproj", "{C6E7DD90-774F-41D3-88B5-B281B12747BA}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -31,6 +33,10 @@ Global
 		{ADC1E1C4-91A1-4B5B-B57F-B1704ABA6758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADC1E1C4-91A1-4B5B-B57F-B1704ABA6758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADC1E1C4-91A1-4B5B-B57F-B1704ABA6758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E7DD90-774F-41D3-88B5-B281B12747BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E7DD90-774F-41D3-88B5-B281B12747BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E7DD90-774F-41D3-88B5-B281B12747BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E7DD90-774F-41D3-88B5-B281B12747BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
