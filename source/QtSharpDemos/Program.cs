@@ -1,4 +1,4 @@
-﻿using QtWidgets;
+using QtWidgets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +40,7 @@ namespace QtSharpDemos {
                 //var colorDialogDemo = new ColorDialogDemo();
                 //var fontDialogDemo = new FontDialogDemo();
 
-                //var panelDemo = new SpliterWithPanelsDemo();
+                var panelDemo = new SpliterWithPanelsDemo();
 
 
                 //var paintDemo = new PaintDemo();

@@ -47,9 +47,6 @@
     <Reference Include="QtQuick.Sharp">
       <HintPath>..\..\..\..\qtsharp\QtQuick.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="QtQuickSharp">
-      <HintPath>..\..\..\..\qtsharp\QtQuickSharp.dll</HintPath>
-    </Reference>
     <Reference Include="QtQuickWidgets.Sharp">
       <HintPath>..\..\..\..\qtsharp\QtQuickWidgets.Sharp.dll</HintPath>
     </Reference>
