@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GuiExample\AbsolutePositionDemo.cs" />
+    <Compile Include="GuiExample\BaseDemoWidget.cs" />
     <Compile Include="GuiExample\ButtonsDemo.cs" />
     <Compile Include="GuiExample\CheckBoxDemo.cs" />
     <Compile Include="GuiExample\FontDialogDemo.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="GuiExample\LabelDemo.cs" />
     <Compile Include="GuiExample\LineEditDemo.cs" />
     <Compile Include="GuiExample\TogleButtonsDemo.cs" />
+    <Compile Include="GuiExample\TreeViewDemo.cs" />
     <Compile Include="GuiExample\WidgetDemo.cs" />
     <Compile Include="GuiExample\QuitButtonDemo.cs" />
     <Compile Include="GuiExample\WindowsDemo.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GuiExample\QRgba.cs" />
+    <Compile Include="TreeWithDemoList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

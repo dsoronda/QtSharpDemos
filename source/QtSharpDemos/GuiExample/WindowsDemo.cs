@@ -1,4 +1,4 @@
-﻿using QtCore.Qt;
+using QtCore.Qt;
 using QtWidgets;
 using System;
 using System.Collections.Generic;
@@ -45,7 +45,7 @@ namespace QtSharpDemos.GuiExample
             vbox1.AddWidget(new QPushButton("Close"), 0, AlignmentFlag.AlignTop);
 
             var hbox1 = new QHBoxLayout();
-            hbox1.AddWidget(new QTextEdit() { Enabled = false });
+            hbox1.AddWidget(new QTextEdit() { Enabled = true });
             hbox1.AddLayout(vbox1);
 
             vbox.AddLayout(hbox1);
