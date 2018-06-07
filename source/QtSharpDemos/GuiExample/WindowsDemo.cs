@@ -37,7 +37,6 @@ namespace QtSharpDemos.GuiExample
         {
             //var vbox = new QVBoxLayout(parentWidget);
             var vbox = new QVBoxLayout();
-
             vbox.AddWidget(new QLabel("Windows"));
 
             var vbox1 = new QVBoxLayout();

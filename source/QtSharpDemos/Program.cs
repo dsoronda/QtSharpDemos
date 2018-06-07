@@ -9,6 +9,8 @@ using QtGui;
 
 namespace QtSharpDemos {
 	class Program {
+		public static QApplication qtApp { get; private set; }
+
 		static int Main( string[] args ) {
 			// Init QT application
 			// project-> properties -> allow unsafe code (must ce checked for now)
@@ -17,7 +19,10 @@ namespace QtSharpDemos {
 				unsafe {
 					int count = 0;
 
-					var qtApp = new QApplication( ref count, null );
+					qtApp = new QApplication( ref count, null );
+					// TODO : missing implementation https://doc.qt.io/archives/qt-4.8/qapplication.html#setStyle
+					// TODO : add dark Fusion theme https://github.com/Jorgen-VikingGod/Qt-Frameless-Window-DarkStyle
+					//qtApp.SetStyle();
 					//var qtApp = new QGuiApplication(ref count, null);
 				}
 

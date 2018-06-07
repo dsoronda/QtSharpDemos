@@ -14,28 +14,34 @@ namespace QtSharpDemos {
 	class TreeWithDemoList : QWidget {
 		private QTreeWidget _treeView;
 
+		// container for demo widgets
+		private QGroupBox demoWidgetContainer;
+
 		/// <summary>
 		///  Demo use box layouts  to create a windows example.
 		/// </summary>
 		public TreeWithDemoList() {
 			WindowTitle = "Window demo";
 			this._treeView = InitTreeView();
-			GetDemoWidgets();
+
+			GetDemoWidgetsList( this._treeView );
 
 			this.Layout = GenerateLayout();
+
+			demoWidgetContainer.Layout.AddWidget( new ButtonsDemo() );
 
 			Resize( 640, 480 );
 			Move( 300, 300 );
 			//Show();
 		}
 
-		void GetDemoWidgets() {
+		void GetDemoWidgetsList( QTreeWidget treeWidget ) {
 			var assembly = typeof( Program ).GetTypeInfo().Assembly;
 			var demos = assembly.DefinedTypes.Where( x => x.GetTypeInfo().IsSubclassOf( typeof( QWidget ) ) && !x.GetTypeInfo().IsAbstract ).ToList();
 			demos.Remove( this.GetType().GetTypeInfo() );
 
 			foreach (var item in demos) {
-				this._treeView.AddTopLevelItem( CreateItem( item.Name, item.FullName ) );
+				treeWidget.AddTopLevelItem( CreateItem( item.Name, item.FullName ) );
 			}
 
 			foreach (TypeInfo item in demos.Take( 1 )) {
@@ -49,15 +55,12 @@ namespace QtSharpDemos {
 		}
 
 		QTreeWidget InitTreeView() {
-
 			var tree = new QTreeWidget();
-
 			tree.ColumnCount = 2;
 			tree.SetColumnWidth( 0, 250 );
 			var name = new QtCore.QStringList( "name" );
 			tree.SetHeaderLabels( name );
 			tree.HeaderItem.SetText( 1, "description" );
-
 
 			var strings = new QtCore.QStringList( "simple, string" );
 
@@ -89,27 +92,39 @@ namespace QtSharpDemos {
 			//var vbox = new QVBoxLayout(parentWidget);
 			var vbox = new QVBoxLayout();
 
-			vbox.AddWidget( new QLabel( "Windows" ) );
+			// demo list
+			var splitter = new QSplitter();
+			//splitter.Orientation = Orientation.Vertical;
+			splitter.AddWidget( this._treeView );
+			//var hbox1 = new QHBoxLayout();
+			//hbox1.AddWidget( this._treeView );
 
 			var vbox1 = new QVBoxLayout();
-			vbox1.AddWidget( new QPushButton( "Activate" ) );
+			// https://doc.qt.io/qt-5/qgroupbox.html#details
+
+			// demo container
+			var demoBox = new QGroupBox( "demos" );
+			demoBox.Layout = new QHBoxLayout();
+			this.demoWidgetContainer = demoBox;
+
+			//vbox1.AddWidget( demoBox );
+
+			splitter.AddWidget( demoBox );
+
+			//vbox.AddLayout( splitter );
+			vbox.AddWidget( splitter );
+
+			var bottomLayout = new QHBoxLayout();
+			bottomLayout.AddWidget( new QPushButton( "Help" ) );
+			bottomLayout.AddWidget( new QPushButton( "Activate" ) );
 			var quitButton = new QPushButton( "Quit" );
 			quitButton.Pressed += CloseButton_Pressed;
+			bottomLayout.AddWidget( quitButton, 0, AlignmentFlag.AlignTop );
 
-			vbox1.AddWidget( quitButton, 0, AlignmentFlag.AlignTop );
+			bottomLayout.AddStretch( 1 );
+			bottomLayout.AddWidget( new QPushButton( "OK" ) );
 
-			var hbox1 = new QHBoxLayout();
-			hbox1.AddWidget( this._treeView );
-			hbox1.AddLayout( vbox1 );
-
-			vbox.AddLayout( hbox1 );
-
-			var hbox2 = new QHBoxLayout();
-			hbox2.AddWidget( new QPushButton( "Help" ) );
-			hbox2.AddStretch( 1 );
-			hbox2.AddWidget( new QPushButton( "OK" ) );
-
-			vbox.AddLayout( hbox2, 1 );
+			vbox.AddLayout( bottomLayout, 1 );
 
 			return vbox;
 			//parentWidget.Layout = vbox;

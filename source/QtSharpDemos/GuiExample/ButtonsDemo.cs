@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,34 +7,40 @@ using QtCore;
 using QtWidgets;
 using QtCore.Qt;
 
-namespace QtSharpDemos.GuiExample
-{
-    class ButtonsDemo : QtWidgets.QWidget
-    {
-        public ButtonsDemo()
-        {
-            WindowTitle = "Buttons demo";
+namespace QtSharpDemos.GuiExample {
+	class ButtonsDemo : BaseDemoWidget {
+		QPlainTextEdit textEditor = new QPlainTextEdit( "some text" );
 
-            InitUI();
+		public ButtonsDemo() : base() {
+			WindowTitle = "Buttons demo";
 
-            Resize(300, 150);
-            Move(300, 300);
-            Show();
-        }
+			//InitUI();
 
-        void InitUI()
-        {
-            var vbox = new QVBoxLayout(this);
-            var hbox = new QHBoxLayout();
+			Resize( 300, 150 );
+			Move( 300, 300 );
+			Show();
+		}
 
-            var ok = new QPushButton("OK", this);
-            var apply = new QPushButton("Apply", this);
+		public override void InitUI() {
+			var vbox = new QVBoxLayout( this );
+			var hbox = new QHBoxLayout();
 
-            hbox.AddWidget(ok, 1, AlignmentFlag.AlignRight);
-            hbox.AddWidget(apply);
+			var ok = new QPushButton( "OK", this );
+			ok.Clicked += Ok_Clicked;
+			var apply = new QPushButton( "Apply", this );
+			apply.Clicked += Apply_Clicked;
 
-            vbox.AddStretch(1);
-            vbox.AddLayout(hbox);
-        }
-    }
+			// Align buttonst to right
+			hbox.AddWidget( ok, 1, AlignmentFlag.AlignRight );
+			hbox.AddWidget( apply );
+
+			vbox.AddWidget( textEditor );
+			//vbox.AddStretch( 1 ); // blank space
+			vbox.AddLayout( hbox );
+		}
+
+		private void Ok_Clicked( bool obj ) => textEditor.AppendPlainText( "Ok clicked" );
+		private void Apply_Clicked( bool obj ) => textEditor.AppendPlainText( $"Apply clicked with event parameter : {obj}" );
+
+	}
 }
