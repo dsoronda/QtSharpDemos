@@ -9,37 +9,29 @@ using QtSharpDemos.media;
 
 namespace QtSharpDemos.GuiExample
 {
-    /// <summary>
-    /// Container for QToolBar
-    /// </summary>
-    public class ToolbarDemo : QWidget
-    {
-        public ToolbarDemo()
-        {
-            WindowTitle = "Simple toolbar demo";
-            // add toolbar to widget
-            var toolbar = new QToolBar(this);
-            InitUI(toolbar);
+	/// <summary>
+	/// Container for QToolBar
+	/// </summary>
+	public class ToolbarDemo : BaseDemoWidget
+	{
+		public static readonly string Description = "Simple toolbar demo";
 
-            Resize(250, 200);
-            //Move(100, 100);
-            Show();
-        }
+		public override void InitUI()
+		{
+			var toolbar = new QToolBar(this);
+			toolbar.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
+			toolbar.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
+			toolbar.AddSeparator();
+			QAction quit = toolbar.AddAction(MediaIconHelper.SystemLogOugIcon, "Quit Application");
 
-        private void InitUI(QToolBar toolbar)
-        {
-            toolbar.AddAction(MediaIconHelper.NewDocumentIcon, "New File");
-            toolbar.AddAction(MediaIconHelper.OpenDocumentIcon, "Open File");
-            toolbar.AddSeparator();
-            QAction quit = toolbar.AddAction(MediaIconHelper.SystemLogOugIcon, "Quit Application");
+			quit.Triggered += Quit_Triggered;
+		}
 
-            quit.Triggered += Quit_Triggered;
-        }
+		private void Quit_Triggered(bool obj)
+		{
+			var msg = new QMessageBox(icon: QMessageBox.Icon.Information, title:"Info", text: "Quit button clicked");
+			//QApplication.CloseAllWindows();
+		}
 
-        private void Quit_Triggered(bool obj)
-        {
-            QApplication.CloseAllWindows();
-        }
-
-    }
+	}
 }
