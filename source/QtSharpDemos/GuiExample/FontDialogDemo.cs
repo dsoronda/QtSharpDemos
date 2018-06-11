@@ -8,31 +8,21 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class FontDialogDemo : QtWidgets.QWidget
+    public class FontDialogDemo : BaseDemoWidget
     {
-        QLabel label;
+		public static readonly string Description = "Open Font dialog and get font name";
+		QLabel label;
 
-        public FontDialogDemo()
-        {
-            WindowTitle = "FontDialog Demo";
+		public override void InitUI()
+		{
+			label = new QLabel("Click me to open font dialog", this);
 
-            InitUI();
+			var vbox = new QVBoxLayout(this);
+			label.Alignment = QtCore.Qt.AlignmentFlag.AlignCenter;
+			vbox.AddWidget(label);
+		}
 
-            Resize(250, 150);
-            Move(300, 300);
-            Show();
-        }
-
-        public void InitUI()
-        {
-            label = new QLabel("FontDialog Demo", this);
-
-            var vbox = new QVBoxLayout(this);
-            label.Alignment = QtCore.Qt.AlignmentFlag.AlignCenter;
-            vbox.AddWidget(label);
-        }
-
-        protected override void OnMousePressEvent(QMouseEvent @event)
+		protected override void OnMousePressEvent(QMouseEvent @event)
         {
             base.OnMousePressEvent(@event);
 
@@ -41,6 +31,7 @@ namespace QtSharpDemos.GuiExample
             if (!ok) return;
 
             label.Font = font;
+			label.Text = $"Selected font is {font.Family}";
         }
     }
 }

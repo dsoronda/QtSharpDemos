@@ -5,9 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample {
-	public abstract class BaseDemoWidget : QtWidgets.QWidget {
-		public string Description { get; set; } = "Demo description";
-
+	public abstract class BaseDemoWidget : QtWidgets.QWidget{
 		public BaseDemoWidget() : base() {
 			InitUI();
 		}

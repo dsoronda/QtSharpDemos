@@ -9,60 +9,61 @@ using QtCore.Qt;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class PaintDemo : QtWidgets.QWidget
-    {
+	public class PaintDemo : BaseDemoWidget
+	{
+		public static readonly string Description = "Paint";
 
-        public PaintDemo()
-        {
-            WindowTitle = "Paint Demo";
- 
-            Resize(400, 300);
-            Show();
-        }
+		public PaintDemo()
+		{
+			Resize(400, 300);
+		}
 
-    
-        protected override void OnPaintEvent(QPaintEvent e)
-        {
-            base.OnPaintEvent(e);
+		public override void InitUI()
+		{
+		}
 
-            // this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
-            var painter = new QPainter(this);
-            painter.SetRenderHint ( QPainter.RenderHint.Antialiasing );
+		protected override void OnPaintEvent(QPaintEvent e)
+		{
+			base.OnPaintEvent(e);
 
-            DrawPatternsEx ( painter );
-            painter.End();
-        }
+			// this is example from Qt site, http://doc.qt.io/qt-5/qtwidgets-widgets-scribble-example.html
+			var painter = new QPainter(this);
+			painter.SetRenderHint(QPainter.RenderHint.Antialiasing);
 
-        void DrawPatternsEx(QPainter ptr)
-        {
-            ptr.SetPen(PenStyle.NoPen);
+			DrawPatternsEx(painter);
+			painter.End();
+		}
 
-            ptr.SetBrush(BrushStyle.HorPattern);
-            ptr.DrawRect(10, 15, 90, 60);
+		void DrawPatternsEx(QPainter ptr)
+		{
+			ptr.SetPen(PenStyle.NoPen);
 
-            ptr.SetBrush(BrushStyle.VerPattern);
-            ptr.DrawRect(130, 15, 90, 60);
+			ptr.SetBrush(BrushStyle.HorPattern);
+			ptr.DrawRect(10, 15, 90, 60);
 
-            ptr.SetBrush(BrushStyle.CrossPattern);
-            ptr.DrawRect(250, 15, 90, 60);
+			ptr.SetBrush(BrushStyle.VerPattern);
+			ptr.DrawRect(130, 15, 90, 60);
 
-            ptr.SetBrush(BrushStyle.Dense7Pattern);
-            ptr.DrawRect(10, 105, 90, 60);
+			ptr.SetBrush(BrushStyle.CrossPattern);
+			ptr.DrawRect(250, 15, 90, 60);
 
-            ptr.SetBrush(BrushStyle.Dense6Pattern);
-            ptr.DrawRect(130, 105, 90, 60);
+			ptr.SetBrush(BrushStyle.Dense7Pattern);
+			ptr.DrawRect(10, 105, 90, 60);
 
-            ptr.SetBrush(BrushStyle.Dense5Pattern);
-            ptr.DrawRect(250, 105, 90, 60);
+			ptr.SetBrush(BrushStyle.Dense6Pattern);
+			ptr.DrawRect(130, 105, 90, 60);
 
-            ptr.SetBrush(BrushStyle.BDiagPattern);
-            ptr.DrawRect(10, 195, 90, 60);
+			ptr.SetBrush(BrushStyle.Dense5Pattern);
+			ptr.DrawRect(250, 105, 90, 60);
 
-            ptr.SetBrush(BrushStyle.FDiagPattern);
-            ptr.DrawRect(130, 195, 90, 60);
+			ptr.SetBrush(BrushStyle.BDiagPattern);
+			ptr.DrawRect(10, 195, 90, 60);
 
-            ptr.SetBrush(BrushStyle.DiagCrossPattern);
-            ptr.DrawRect(250, 195, 90, 60);
-        }
-    }
+			ptr.SetBrush(BrushStyle.FDiagPattern);
+			ptr.DrawRect(130, 195, 90, 60);
+
+			ptr.SetBrush(BrushStyle.DiagCrossPattern);
+			ptr.DrawRect(250, 195, 90, 60);
+		}
+	}
 }

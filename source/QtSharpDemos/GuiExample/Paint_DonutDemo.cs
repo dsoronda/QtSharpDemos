@@ -9,17 +9,12 @@ using QtCore.Qt;
 using QtCore;
 
 namespace QtSharpDemos.GuiExample {
-    public class Paint_DonutDemo : QtWidgets.QWidget {
+    public class Paint_DonutDemo : BaseDemoWidget {
+		public static readonly string Description = "Draw Donut using QPainter";
 
-        public Paint_DonutDemo ( ) {
-            WindowTitle = "Paint Donut Demo";
+		public override void InitUI() { }
 
-            Resize ( 400, 300 );
-            Show ( );
-        }
-
-
-        protected override void OnPaintEvent ( QPaintEvent e ) {
+		protected override void OnPaintEvent ( QPaintEvent e ) {
             base.OnPaintEvent ( e );
 
             var painter = new QPainter(this);
@@ -34,7 +29,6 @@ namespace QtSharpDemos.GuiExample {
 
             painter.Pen = new QPen ( color, 0.5 );
             painter.SetRenderHint ( QPainter.RenderHint.Antialiasing );
-
 
             painter.Translate ( new QPoint ( Width / 2, Height / 2 ) );
 

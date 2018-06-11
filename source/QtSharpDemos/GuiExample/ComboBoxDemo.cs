@@ -8,43 +8,47 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class ComboBoxDemo : QtWidgets.QWidget
-    {
-        QLabel label;
+	public class ComboBoxDemo : BaseDemoWidget
+	{
+		QLabel label;
+		public static readonly string Description = "Combo box usage";
 
-        public ComboBoxDemo()
-        {
-            WindowTitle = "ComboBox Demo";
+		//public ComboBoxDemo()
+		//{
+		//	WindowTitle = "ComboBox Demo";
 
-            InitUI();
+		//	InitUI();
 
-            Resize(250, 200);
-            Move(100, 100);
-            Show();
-        }
+		//	Resize(250, 200);
+		//	Move(100, 100);
+		//	Show();
+		//}
 
-        public void InitUI()
-        {
-            label = new QLabel("Ubuntu", this);
+		public override void InitUI()
+		{
+			var layout = new QVBoxLayout(this);
 
-            var combo = new QComboBox(this);
-            combo.AddItem("Ubuntu");
-            combo.AddItem("Arch");
-            combo.AddItem("Fedora");
-            combo.AddItem("Red Hat");
-            combo.AddItem("Gentoo");
+			label = new QLabel("Selected");
+			label.AdjustSize();
 
-            combo.Move(50, 30);
-            label.Move(50, 100);
+			layout.AddWidget(label);
 
-            //combo.ActivatedString += OnActivated;
-            combo.ActivatedText += OnActivated;
-        }
+			var combo = new QComboBox(this);
+			combo.AddItem("Ubuntu");
+			combo.AddItem("Arch");
+			combo.AddItem("Fedora");
+			combo.AddItem("Red Hat");
+			combo.AddItem("Gentoo");
 
-        public void OnActivated(string text)
-        {
-            label.Text = text;
-            label.AdjustSize();
-        }
-    }
+			layout.AddWidget(combo);
+
+			combo.ActivatedText += OnActivated;
+		}
+
+		public void OnActivated(string text)
+		{
+			label.Text = $"Selected text: {text}";
+			label.AdjustSize();
+		}
+	}
 }

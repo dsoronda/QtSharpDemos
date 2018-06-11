@@ -10,23 +10,16 @@ using QtCore;
 using QtGui;
 
 namespace QtSharpDemos.GuiExample {
-	public class TreeViewDemo : QTreeWidget {
+	public class TreeViewDemo : BaseDemoWidget {
+		public static readonly string Description = "TreeView with child elements";
+
 		private QTreeWidgetItem _previousSelectedItem;
+		private QTreeWidget tree;
 
-		public TreeViewDemo() {
-			WindowTitle = "TreeView demo";
-
-			InitUI();
-
-			Resize( 350, 300 );
-			Move( 300, 300 );
-			Show();
-		}
-
-		void InitUI() {
+		public override void InitUI() {
 			var strings = new QtCore.QStringList( "simple, string" );
 
-			var tree = this;
+			tree = new QTreeWidget(this);
 			tree.ColumnCount = 2;
 			var column = tree.ColumnAt( 0 );
 
@@ -44,7 +37,7 @@ namespace QtSharpDemos.GuiExample {
 		}
 
 		private void Tree_ItemSelectionChanged() {
-			var item = this.CurrentItem;
+			var item = tree.CurrentItem;
 			item.SetBackground( 0, new QtGui.QBrush( GlobalColor.red ) );
 			item.SetBackground( 1, new QtGui.QBrush( GlobalColor.green ) );
 			this._previousSelectedItem = item;
@@ -57,5 +50,6 @@ namespace QtSharpDemos.GuiExample {
 
 			return item;
 		}
+
 	}
 }

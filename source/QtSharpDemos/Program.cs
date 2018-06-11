@@ -25,6 +25,7 @@ namespace QtSharpDemos {
 					//qtApp.SetStyle();
 					//var qtApp = new QGuiApplication(ref count, null);
 				}
+				
 
 				//var labelDemo = new LabelDemo();
 
@@ -73,7 +74,7 @@ namespace QtSharpDemos {
 
 			} catch (Exception ex) {
 				Console.WriteLine( ex.Message );
-				Console.ReadKey();
+				//Console.ReadKey();
 
 				// throw;
 			}

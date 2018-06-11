@@ -10,6 +10,7 @@ using QtCore.Qt;
 namespace QtSharpDemos.GuiExample {
 	class ButtonsDemo : BaseDemoWidget {
 		QPlainTextEdit textEditor = new QPlainTextEdit( "some text" );
+		public static readonly string Description = "Buttons demo with textbox";
 
 		public ButtonsDemo() : base() {
 			WindowTitle = "Buttons demo";

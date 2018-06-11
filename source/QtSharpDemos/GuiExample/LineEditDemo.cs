@@ -7,40 +7,29 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    public class LineEditDemo : QtWidgets.QWidget
-    {
-        QLabel label;
+	public class LineEditDemo : BaseDemoWidget
+	{
+		QLabel label = new QLabel();
+		public static readonly string Description = "This program shows text which is entered in a QLineEdit widget in a QLabel widget.";
 
-        /// <summary>
-        /// This program shows text which is entered in a QLineEdit widget in a QLabel widget.
-        /// </summary>
-        public LineEditDemo()
-        {
-            WindowTitle = "LineEdit demo";
+		public override void InitUI()
+		{
+			var layout = new QVBoxLayout(this);
 
-            InitUI();
+			var edit = new QLineEdit(this);
+			edit.TextChanged += OnChanged;
+			edit.Text = "LineEdit demo";
 
-            Resize(250, 150);
-            Move(300, 300);
-            Show();
-        }
+			layout.AddWidget(label);
+			layout.AddWidget(edit);
 
-        public void InitUI()
-        {
-            label = new QLabel(this);
+		}
 
-            QLineEdit edit = new QLineEdit(this);
-            edit.TextChanged += OnChanged;
-            edit.Text = "LineEdit demo";
+		public void OnChanged(string text)
+		{
+			label.Text = text;
+			label.AdjustSize();
+		}
 
-            edit.Move(60, 100);
-            label.Move(60, 40);
-        }
-
-        public void OnChanged(string text)
-        {
-            label.Text = text;
-            label.AdjustSize();
-        }
-    }
+	}
 }

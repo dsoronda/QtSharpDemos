@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GuiExample\AbsolutePositionDemo.cs" />
+    <Compile Include="GuiExample\ImagesWithAbsolutePositionDemo.cs" />
     <Compile Include="GuiExample\BaseDemoWidget.cs" />
     <Compile Include="GuiExample\ButtonsDemo.cs" />
     <Compile Include="GuiExample\CheckBoxDemo.cs" />
@@ -86,9 +86,8 @@
     <Compile Include="GuiExample\LineEditDemo.cs" />
     <Compile Include="GuiExample\TogleButtonsDemo.cs" />
     <Compile Include="GuiExample\TreeViewDemo.cs" />
-    <Compile Include="GuiExample\WidgetDemo.cs" />
     <Compile Include="GuiExample\QuitButtonDemo.cs" />
-    <Compile Include="GuiExample\WindowsDemo.cs" />
+    <Compile Include="GuiExample\FormDemo.cs" />
     <Compile Include="media\MediaGfxHelper.cs" />
     <Compile Include="media\MediaIconHelper.cs" />
     <Compile Include="Program.cs" />

@@ -9,20 +9,17 @@ using QtCore.Qt;
 using QtCore;
 
 namespace QtSharpDemos.GuiExample {
-    public class Paint_GrayscaleImage : QtWidgets.QWidget {
-        QImage colorImage;
+    public class Paint_GrayscaleImage : BaseDemoWidget {
+		public static readonly string Description = "Convert image to grayscale";
+
+		QImage colorImage;
         QImage grayscaleImage;
 
         public Paint_GrayscaleImage ( ) {
-            WindowTitle = "Paint Grayscale Demo";
             colorImage = media.MediaGfxHelper.PancakeImage.ScaledToWidth ( 400, mode: TransformationMode.SmoothTransformation ); // get image
             //grayscaleImage = ConvertToGrayScale ( colorImage );
             grayscaleImage = ConvertToGrayScaleIndexed ( colorImage );
-
-            Resize ( 840, 400 );
-            Show ( );
         }
-
 
         protected override void OnPaintEvent ( QPaintEvent e ) {
             base.OnPaintEvent ( e );
@@ -35,7 +32,7 @@ namespace QtSharpDemos.GuiExample {
 
         void DrawImages ( QPainter painter ) {
             painter.DrawImage ( 5, 15, colorImage );
-            painter.DrawImage ( colorImage.Width + 10, 15, grayscaleImage );
+            painter.DrawImage ( 5, colorImage.Height + 10, grayscaleImage );
         }
 
         /// <summary>
@@ -93,5 +90,6 @@ namespace QtSharpDemos.GuiExample {
             return newImage;
         }
 
-    }
+		public override void InitUI() { }
+	}
 }

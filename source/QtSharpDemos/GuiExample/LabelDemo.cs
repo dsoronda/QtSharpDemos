@@ -8,20 +8,26 @@ using System.Threading.Tasks;
 
 namespace QtSharpDemos.GuiExample
 {
-    /// <summary>
-    /// Note : A widget that is not embedded in a parent widget is called a window (from Qt documentation)
-    /// </summary>
-	public class LabelDemo : QtWidgets.QWidget
+	/// <summary>
+	/// Note : A widget that is not embedded in a parent widget is called a window (from Qt documentation)
+	/// </summary>
+	public class LabelDemo : BaseDemoWidget
 	{
+		public static readonly string Description = "Show simple label";
 		public LabelDemo()
 		{
 			WindowTitle = "Label demo";
 
+			//Resize(250, 150);
+			//Show();
+		}
+
+		public override void InitUI()
+		{
+
 			var vboxLayout = GetLayout();
 			this.Layout = vboxLayout;
 
-			Resize(250, 150);
-			Show();
 		}
 
 		/// <summary>
@@ -43,10 +49,12 @@ namespace QtSharpDemos.GuiExample
 		/// <param name="font">Font for text (default is Arial 12)</param>
 		public static QLabel InitLabel(string text = "Hi", QFont font = null)
 		{
-            return new QLabel(text)
-            {
-                Font = font ?? new QFont("Arial", 12)
-            };
+			return new QLabel(text)
+			{
+				Font = font ?? new QFont("Arial", 12)
+			};
 		}
+
+
 	}
 }

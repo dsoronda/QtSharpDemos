@@ -51,7 +51,7 @@ namespace QtSharpDemos.GuiExample {
 
         private QWidget GetRightContainer ( ) {
             var container = new QWidget();
-            container.Layout = WindowsDemo.GenerateLayout ( );
+            container.Layout = FormDemo.GenerateLayout ( );
             return container;
         }
     }

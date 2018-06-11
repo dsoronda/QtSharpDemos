@@ -1,4 +1,4 @@
-﻿using QtWidgets;
+using QtWidgets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,47 +7,39 @@ using System.Threading.Tasks;
 using QtCore;
 using QtGui;
 
-namespace QtSharpDemos.GuiExample
-{
-    public class InputDialogDemo : QtWidgets.QWidget
-    {
-        QLineEdit edit;
+namespace QtSharpDemos.GuiExample {
+	public class InputDialogDemo : BaseDemoWidget {
+		QLineEdit edit;
+		public static readonly string Description = "Show results from InputDialog";
 
-        /// <summary>
-        /// This program shows text which is entered in a QLineEdit widget in a QLabel widget.
-        /// </summary>
-        public InputDialogDemo()
-        {
-            WindowTitle = "InputDialog Demo";
+		/// <summary>
+		/// This program shows text which is entered in a QLineEdit widget in a QLabel widget.
+		/// </summary>
+		public InputDialogDemo() : base() {
+			Resize( 350, 150 );
+		}
 
-            InitUI();
+		public override void InitUI() {
+			this.Layout = new QHBoxLayout();
+			QPushButton button = new QPushButton( "Dialog", this );
+			button.Clicked += Show_Clicked;
 
-            Resize(350, 150);
-            Move(300, 300);
-            Show();
-        }
+			button.FocusPolicy = QtCore.Qt.FocusPolicy.NoFocus;
+			this.Layout.AddWidget( button );
+			//show.Move( 20, 20 );
 
-        public void InitUI()
-        {
-            QPushButton show = new QPushButton("Dialog", this);
-            show.Clicked += Show_Clicked;
+			edit = new QLineEdit( this );
+			//edit.Move( 130, 22 );
+			this.Layout.AddWidget( edit );
+		}
 
-            show.FocusPolicy = QtCore.Qt.FocusPolicy.NoFocus;
-            show.Move(20, 20);
+		private void Show_Clicked( bool obj ) {
+			String text = QInputDialog.GetText( this, "Input Dialog", "Enter something" );
 
-            edit = new QLineEdit(this);
-            edit.Move(130, 22);
-        }
+			if (!string.IsNullOrWhiteSpace( text )) {
+				edit.Text = text;
+			}
+		}
 
-        private void Show_Clicked(bool obj)
-        {
-            String text = QInputDialog.GetText(this, "Input Dialog", "Enter something");
-
-            if (!string.IsNullOrWhiteSpace(text))
-            {
-                edit.Text = text;
-            }
-        }
-       
-    }
+	}
 }
