@@ -79,7 +79,7 @@ namespace QtSharpDemos
 				var demoTypeInfo = demoDictionary[name];
 				demoWidget.Dispose();
 
-				demoWidget = (BaseDemoWidget)Activator.CreateInstance(demoTypeInfo);
+				demoWidget = (QWidget)Activator.CreateInstance(demoTypeInfo);
 				demoWidgetContainer.Layout.AddWidget(demoWidget);
 				demoWidgetContainer.Repaint();
 			}
