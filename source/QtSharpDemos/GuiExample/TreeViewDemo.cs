@@ -38,8 +38,8 @@ namespace QtSharpDemos.GuiExample {
 
 		private void Tree_ItemSelectionChanged() {
 			var item = tree.CurrentItem;
-			item.SetBackground( 0, new QtGui.QBrush( GlobalColor.red ) );
-			item.SetBackground( 1, new QtGui.QBrush( GlobalColor.green ) );
+			item.SetBackground( 0, new QtGui.QBrush( GlobalColor.Red ) );
+			item.SetBackground( 1, new QtGui.QBrush( GlobalColor.Green ) );
 			this._previousSelectedItem = item;
 		}
 

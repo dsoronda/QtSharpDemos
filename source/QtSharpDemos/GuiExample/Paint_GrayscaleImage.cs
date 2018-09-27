@@ -69,7 +69,7 @@ namespace QtSharpDemos.GuiExample {
         /// <param name="originalImage"></param>
         /// <returns></returns>
         public static QImage ConvertToGrayScaleIndexed ( QImage originalImage ) {
-            var newImage = new QImage(originalImage.Size, QImage.Format.Format_Grayscale8);
+            var newImage = new QImage(originalImage.Size, QImage.Format.FormatGrayscale8);
             newImage.ColorCount = 256;
             for ( int i = 0 ; i < 256 ; i++ ) newImage.SetColor ( i, qrgb.QRgb ( i, i, i ) );
 
